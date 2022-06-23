@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-04-21 13:54+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2016-05-11 20:22+0000\n"
+"Last-Translator: Myagmarjav Enkhbileg <miigaa.lucky@gmail.com>, 2019\n"
 "Language-Team: Mongolian (http://www.transifex.com/torchbox/wagtail/language/"
 "mn/)\n"
 "MIME-Version: 1.0\n"
@@ -93,10 +93,6 @@ msgid "Home"
 msgstr "Нүүр хуудас"
 
 #, python-format
-msgid " By %(filter_title)s "
-msgstr "%(filter_title)s-р"
-
-#, python-format
 msgid "Sorry, there are no %(name)s matching your search parameters."
 msgstr "Уучлаарай, хайлтад тохирох %(name)s олдсонгүй."
 
@@ -106,6 +102,9 @@ msgstr "Хайлт хийх"
 #, python-format
 msgid "Search %(name)s"
 msgstr "%(name)s хайх"
+
+msgid "Download CSV"
+msgstr "CSV татах"
 
 msgid "Filter"
 msgstr "Шүүлтүүр"
@@ -152,3 +151,6 @@ msgstr "Шалгаж байна"
 #, python-format
 msgid "Inspecting %s"
 msgstr "%s-г шалгаж байна"
+
+msgid "Date"
+msgstr "Огноо"

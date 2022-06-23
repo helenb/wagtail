@@ -1,15 +1,17 @@
 import csv
 import datetime
-
 from collections import OrderedDict
 
 from django.core.exceptions import FieldDoesNotExist
 from django.http import HttpResponse, StreamingHttpResponse
+from django.utils.dateformat import Formatter
 from django.utils.encoding import force_str
+from django.utils.formats import get_format
 from django.utils.translation import gettext as _
 from xlsxwriter.workbook import Workbook
 
 from wagtail.admin.forms.search import SearchForm
+from wagtail.coreutils import multigetattr
 from wagtail.search.backends import get_search_backend
 from wagtail.search.index import class_is_indexed
 
@@ -19,22 +21,24 @@ class SearchableListMixin:
     search_fields = None
 
     def get_search_form(self):
-        return SearchForm(self.request.GET if self.request.GET.get('q') else None, placeholder=self.search_box_placeholder)
+        return SearchForm(
+            self.request.GET if self.request.GET.get("q") else None,
+            placeholder=self.search_box_placeholder,
+        )
 
     def get_queryset(self):
         queryset = super().get_queryset()
         search_form = self.get_search_form()
 
         if search_form.is_valid():
-            q = search_form.cleaned_data['q']
+            q = search_form.cleaned_data["q"]
 
             if class_is_indexed(queryset.model):
                 search_backend = get_search_backend()
                 queryset = search_backend.search(q, queryset, fields=self.search_fields)
             else:
                 filters = {
-                    field + '__icontains': q
-                    for field in self.search_fields or []
+                    field + "__icontains": q for field in self.search_fields or []
                 }
 
                 queryset = queryset.filter(**filters)
@@ -42,9 +46,9 @@ class SearchableListMixin:
         return queryset
 
     def get_context_data(self, **kwargs):
-        if 'search_form' not in kwargs:
-            kwargs['search_form'] = self.get_search_form()
-            kwargs['is_searching'] = bool(self.request.GET.get('q'))
+        if "search_form" not in kwargs:
+            kwargs["search_form"] = self.get_search_form()
+            kwargs["is_searching"] = bool(self.request.GET.get("q"))
 
         return super().get_context_data(**kwargs)
 
@@ -61,8 +65,63 @@ def list_to_str(value):
     return force_str(", ".join(value))
 
 
+class ExcelDateFormatter(Formatter):
+    data = None
+
+    _formats = {
+        "d": "DD",
+        "j": "D",
+        "D": "NN",
+        "l": "NNNN",
+        "S": "",
+        "w": "",
+        "z": "",
+        "W": "",
+        "m": "MM",
+        "n": "M",
+        "M": "MMM",
+        "b": "MMM",
+        "F": "MMMM",
+        "E": "MMM",
+        "N": "MMM.",
+        "y": "YY",
+        "Y": "YYYY",
+        "L": "",
+        "o": "",
+        "g": "H",
+        "G": "H",
+        "h": "HH",
+        "H": "HH",
+        "i": "MM",
+        "s": "SS",
+        "u": "",
+        "a": "AM/PM",
+        "A": "AM/PM",
+        "P": "HH:MM AM/PM",
+        "e": "",
+        "I": "",
+        "O": "",
+        "T": "",
+        "Z": "",
+        "c": "YYYY-MM-DD HH:MM:SS",
+        "r": "NN, MMM D YY HH:MM:SS",
+        "U": "[HH]:MM:SS",
+    }
+
+    def get(self):
+        format = get_format("SHORT_DATETIME_FORMAT")
+        return self.format(format)
+
+    def __getattr__(self, name):
+        if name in self._formats:
+            return lambda: self._formats[name]
+        raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+
+
 class SpreadsheetExportMixin:
-    """ A mixin for views, providing spreadsheet export functionality in csv and xlsx formats """
+    """A mixin for views, providing spreadsheet export functionality in csv and xlsx formats"""
 
     FORMAT_XLSX = "xlsx"
     FORMAT_CSV = "csv"
@@ -82,32 +141,18 @@ class SpreadsheetExportMixin:
     export_headings = {}
 
     def get_filename(self):
-        """ Gets the base filename for the exported spreadsheet, without extensions """
+        """Gets the base filename for the exported spreadsheet, without extensions"""
         return "spreadsheet-export"
 
     def to_row_dict(self, item):
-        """ Returns an OrderedDict (in the order given by list_export) of the exportable information for a model instance"""
+        """Returns an OrderedDict (in the order given by list_export) of the exportable information for a model instance"""
         row_dict = OrderedDict(
-            (field, self.multigetattr(item, field)) for field in self.list_export
+            (field, multigetattr(item, field)) for field in self.list_export
         )
         return row_dict
 
-    def multigetattr(self, item, multi_attribute):
-        """ Gets the value of a dot-pathed sequence of attributes/callables on a model, calling at each stage if possible """
-        current_value = item
-        for attribute in multi_attribute.split("."):
-            try:
-                current_value = current_value()
-            except TypeError:
-                pass
-            current_value = getattr(current_value, attribute)
-        try:
-            return current_value()
-        except TypeError:
-            return current_value
-
     def get_preprocess_function(self, field, value, export_format):
-        """ Returns the preprocessing function for a given field name, field value, and export format"""
+        """Returns the preprocessing function for a given field name, field value, and export format"""
 
         # Try to find a field specific function and return it
         format_dict = self.custom_field_preprocess.get(field, {})
@@ -145,19 +190,17 @@ class SpreadsheetExportMixin:
         return writer.writerow(processed_row)
 
     def get_heading(self, queryset, field):
-        """ Get the heading label for a given field for a spreadsheet generated from queryset """
+        """Get the heading label for a given field for a spreadsheet generated from queryset"""
         heading_override = self.export_headings.get(field)
         if heading_override:
             return force_str(heading_override)
         try:
-            return force_str(
-                queryset.model._meta.get_field(field).verbose_name.title()
-            )
+            return force_str(queryset.model._meta.get_field(field).verbose_name.title())
         except (AttributeError, FieldDoesNotExist):
             return force_str(field)
 
     def stream_csv(self, queryset):
-        """ Generate a csv file line by line from queryset, to be used in a StreamingHTTPResponse """
+        """Generate a csv file line by line from queryset, to be used in a StreamingHTTPResponse"""
         writer = csv.DictWriter(Echo(), fieldnames=self.list_export)
         yield writer.writerow(
             {field: self.get_heading(queryset, field) for field in self.list_export}
@@ -167,14 +210,14 @@ class SpreadsheetExportMixin:
             yield self.write_csv_row(writer, self.to_row_dict(item))
 
     def write_xlsx(self, queryset, output):
-        """ Write an xlsx workbook from a queryset"""
+        """Write an xlsx workbook from a queryset"""
         workbook = Workbook(
             output,
             {
                 "in_memory": True,
                 "constant_memory": True,
                 "remove_timezone": True,
-                "default_date_format": "dd/mm/yy hh:mm:ss",
+                "default_date_format": ExcelDateFormatter().get(),
             },
         )
         worksheet = workbook.add_worksheet()
@@ -208,7 +251,7 @@ class SpreadsheetExportMixin:
         return response
 
     def as_spreadsheet(self, queryset, spreadsheet_format):
-        """ Return a response with a spreadsheet representing the exported data from queryset, in the format specified"""
+        """Return a response with a spreadsheet representing the exported data from queryset, in the format specified"""
         if spreadsheet_format == self.FORMAT_CSV:
             return self.write_csv_response(queryset)
         elif spreadsheet_format == self.FORMAT_XLSX:
@@ -216,13 +259,13 @@ class SpreadsheetExportMixin:
 
     def get_export_url(self, format):
         params = self.request.GET.copy()
-        params['export'] = format
-        return self.request.path + '?' + params.urlencode()
+        params["export"] = format
+        return self.request.path + "?" + params.urlencode()
 
     @property
     def xlsx_export_url(self):
-        return self.get_export_url('xlsx')
+        return self.get_export_url("xlsx")
 
     @property
     def csv_export_url(self):
-        return self.get_export_url('csv')
+        return self.get_export_url("csv")

@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-04-21 13:54+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2016-05-11 20:22+0000\n"
+"Last-Translator: Mariano de Deus <dedeus_mariano@yahoo.com>, 2019\n"
 "Language-Team: Tetum (Tetun) (http://www.transifex.com/torchbox/wagtail/"
 "language/tet/)\n"
 "MIME-Version: 1.0\n"
@@ -115,10 +115,6 @@ msgid "Home"
 msgstr "Uma"
 
 #, python-format
-msgid " By %(filter_title)s "
-msgstr "hosi %(filter_title)s"
-
-#, python-format
 msgid "Sorry, there are no %(name)s matching your search parameters."
 msgstr "Diskulpa, ne'e laiha %(name)smaka hanesan  ita buka parametru."
 
@@ -128,6 +124,9 @@ msgstr "Buka ba"
 #, python-format
 msgid "Search %(name)s"
 msgstr "Buka %(name)s"
+
+msgid "Download CSV"
+msgstr "Download CSV"
 
 msgid "Filter"
 msgstr " Filtru"
@@ -201,3 +200,6 @@ msgstr "Inspeksaun tiha ona"
 #, python-format
 msgid "Inspecting %s"
 msgstr "Inpeksaun %s"
+
+msgid "Date"
+msgstr "Data"

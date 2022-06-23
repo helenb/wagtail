@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-04-21 13:54+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2016-05-11 20:22+0000\n"
+"Last-Translator: M. Febrian Ramadhana <febrian@ramadhana.me>, 2018\n"
 "Language-Team: Indonesian (Indonesia) (http://www.transifex.com/torchbox/"
 "wagtail/language/id_ID/)\n"
 "MIME-Version: 1.0\n"
@@ -115,10 +115,6 @@ msgid "Home"
 msgstr "Beranda"
 
 #, python-format
-msgid " By %(filter_title)s "
-msgstr "Oleh %(filter_title)s"
-
-#, python-format
 msgid "Sorry, there are no %(name)s matching your search parameters."
 msgstr "Maaf, tidak ada %(name)syang sesuai dengan parameter pencarian."
 
@@ -128,6 +124,9 @@ msgstr "Pencarian untuk"
 #, python-format
 msgid "Search %(name)s"
 msgstr "Pencarian %(name)s"
+
+msgid "Download CSV"
+msgstr "Unduh CSV"
 
 msgid "Filter"
 msgstr "Saring"
@@ -143,16 +142,6 @@ msgstr ""
 #, python-format
 msgid "No %(name)s have been created yet."
 msgstr "Tidak ada %(name)s yang telah dibuat."
-
-#, python-format
-msgid ""
-"\n"
-"                                                Why not <a href=\"%(url)s"
-"\">add one</a>?\n"
-"                                            "
-msgstr ""
-"\n"
-"Kenapa tidak <a href=\"%(url)s\">tambah satu</a>?"
 
 #, python-format
 msgid "Page %(current_page)s of %(num_pages)s."
@@ -208,3 +197,6 @@ msgstr "Memeriksa"
 #, python-format
 msgid "Inspecting %s"
 msgstr "Memeriksa %s"
+
+msgid "Date"
+msgstr "Tanggal"

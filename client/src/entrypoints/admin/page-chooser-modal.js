@@ -1,10 +1,21 @@
 import $ from 'jquery';
 
+/* global wagtail */
+
 const PAGE_CHOOSER_MODAL_ONLOAD_HANDLERS = {
   browse(modal, jsonData) {
     /* Set up link-types links to open in the modal */
     // eslint-disable-next-line func-names
     $('.link-types a', modal.body).on('click', function () {
+      modal.loadUrl(this.href);
+      return false;
+    });
+
+    /* Initialize dropdowns */
+    wagtail.ui.initDropDowns();
+    /* Set up dropdown links to open in the modal */
+    // eslint-disable-next-line func-names
+    $('.c-dropdown__item .u-link', modal.body).on('click', function () {
       modal.loadUrl(this.href);
       return false;
     });
@@ -38,22 +49,22 @@ const PAGE_CHOOSER_MODAL_ONLOAD_HANDLERS = {
           data: {
             // eslint-disable-next-line id-length
             q: query,
-            results_only: true
+            results_only: true,
           },
           success(data) {
             request = null;
             $('.page-results', modal.body).html(data);
-            // eslint-disable-next-line no-use-before-define
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
             ajaxifySearchResults();
           },
           error() {
             request = null;
-          }
+          },
         });
       } else {
         /* search box is empty - restore original page browser HTML */
         $('.page-results', modal.body).html(initialPageResultsHtml);
-        // eslint-disable-next-line no-use-before-define
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
         ajaxifyBrowseResults();
       }
       return false;
@@ -82,8 +93,10 @@ const PAGE_CHOOSER_MODAL_ONLOAD_HANDLERS = {
       });
       /* pagination links within search results should be AJAX-fetched
       and the result loaded into .page-results (and ajaxified) */
-      // eslint-disable-next-line func-names
-      $('.page-results a.navigate-pages', modal.body).on('click', function () {
+      $(
+        '.page-results a.navigate-pages, .page-results [data-breadcrumb-item] a',
+        modal.body,
+      ).on('click', function handleLinkClick() {
         $('.page-results', modal.body).load(this.href, ajaxifySearchResults);
         return false;
       });
@@ -97,8 +110,10 @@ const PAGE_CHOOSER_MODAL_ONLOAD_HANDLERS = {
 
     function ajaxifyBrowseResults() {
       /* Set up page navigation links to open in the modal */
-      // eslint-disable-next-line func-names
-      $('.page-results a.navigate-pages', modal.body).on('click', function () {
+      $(
+        '.page-results a.navigate-pages, .page-results [data-breadcrumb-item] a',
+        modal.body,
+      ).on('click', function handleLinkClick() {
         modal.loadUrl(this.href);
         return false;
       });
@@ -113,6 +128,13 @@ const PAGE_CHOOSER_MODAL_ONLOAD_HANDLERS = {
 
         return false;
       });
+      // eslint-disable-next-line func-names
+      $('.c-dropdown__item .u-link', modal.body).on('click', function () {
+        modal.loadUrl(this.href);
+        return false;
+      });
+
+      wagtail.ui.initDropDowns();
     }
     ajaxifyBrowseResults();
 
@@ -178,6 +200,20 @@ const PAGE_CHOOSER_MODAL_ONLOAD_HANDLERS = {
   external_link_chosen(modal, jsonData) {
     modal.respond('pageChosen', jsonData.result);
     modal.close();
+  },
+  confirm_external_to_internal(modal, jsonData) {
+    // eslint-disable-next-line func-names, prefer-arrow-callback
+    $('[data-action-confirm]', modal.body).on('click', function () {
+      modal.respond('pageChosen', jsonData.internal);
+      modal.close();
+      return false;
+    });
+    // eslint-disable-next-line func-names, prefer-arrow-callback
+    $('[data-action-deny]', modal.body).on('click', function () {
+      modal.respond('pageChosen', jsonData.external);
+      modal.close();
+      return false;
+    });
   },
 };
 window.PAGE_CHOOSER_MODAL_ONLOAD_HANDLERS = PAGE_CHOOSER_MODAL_ONLOAD_HANDLERS;

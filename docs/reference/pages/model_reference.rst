@@ -2,7 +2,7 @@
 Model Reference
 ===============
 
-.. automodule:: wagtail.core.models
+.. automodule:: wagtail.models
 
 This document contains reference information for the model classes inside the ``wagtailcore`` module.
 
@@ -90,9 +90,11 @@ Database fields
 
         (boolean)
 
-        Toggles whether the page should be included in site-wide menus.
+        Toggles whether the page should be included in site-wide menus, and is shown in the ``promote_panels`` within the Page editor.
 
-        This is used by the :meth:`~wagtail.core.query.PageQuerySet.in_menu` QuerySet filter.
+        Wagtail does not include any menu implementation by default, which means that this field will not do anything in the front facing content unless built that way in a specific Wagtail installation.
+
+        However, this is used by the :meth:`~wagtail.query.PageQuerySet.in_menu` QuerySet filter to make it easier to query for pages that use this field.
 
         Defaults to ``False`` and can be overridden on the model with ``show_in_menus_default = True``.
 
@@ -168,7 +170,11 @@ In addition to the model fields provided, ``Page`` has many properties and metho
 
     .. autoattribute:: cached_content_type
 
+    .. autoattribute:: page_type_display_name
+
     .. automethod:: get_url
+
+    .. automethod:: get_full_url
 
     .. autoattribute:: full_url
 
@@ -254,11 +260,20 @@ In addition to the model fields provided, ``Page`` has many properties and metho
             class HiddenPage(Page):
                 parent_page_types = []
 
+        To allow for a page to be only created under the root page (e.g. for ``HomePage`` models) set the ``parent_page_type`` to ``['wagtailcore.Page']``.
+
+        .. code-block:: python
+
+            class HomePage(Page):
+                parent_page_types = ['wagtailcore.Page']
+
     .. automethod:: can_exist_under
 
     .. automethod:: can_create_at
 
     .. automethod:: can_move_to
+
+    .. automethod:: get_route_paths
 
     .. attribute:: password_required_template
 
@@ -322,7 +337,7 @@ In addition to the model fields provided, ``Page`` has many properties and metho
 
 The ``Site`` model is useful for multi-site installations as it allows an administrator to configure which part of the tree to use for each hostname that the server responds on.
 
-The :meth:`~wagtail.core.models.Site.find_for_request` function returns the Site object that will handle the given HTTP request.
+The :meth:`~wagtail.models.Site.find_for_request` function returns the Site object that will handle the given HTTP request.
 
 
 Database fields
@@ -358,7 +373,7 @@ Database fields
 
     .. attribute:: root_page
 
-        (foreign key to :class:`~wagtail.core.models.Page`)
+        (foreign key to :class:`~wagtail.models.Page`)
 
         This is a link to the root page of the site. This page will be what appears at the ``/`` URL on the site and would usually be a homepage.
 
@@ -384,9 +399,9 @@ Methods and properties
 
         The scheme part of the URL is calculated based on value of the :attr:`~Site.port` field:
 
-         - 80 = ``http://``
-         - 443 = ``https://``
-         - Everything else will use the ``http://`` scheme and the port will be appended to the end of the hostname (eg. ``http://mysite.com:8000/``)
+        - 80 = ``http://``
+        - 443 = ``https://``
+        - Everything else will use the ``http://`` scheme and the port will be appended to the end of the hostname (eg. ``http://mysite.com:8000/``)
 
     .. automethod:: get_site_root_paths
 
@@ -445,7 +460,7 @@ The ``locale`` and ``translation_key`` fields have a unique key constraint to pr
 
     .. attribute:: locale
 
-        (Foreign Key to :class:`~wagtail.core.models.Locale`)
+        (Foreign Key to :class:`~wagtail.models.Locale`)
 
         For pages, this defaults to the locale of the parent page.
 
@@ -471,25 +486,49 @@ The ``locale`` and ``translation_key`` fields have a unique key constraint to pr
     .. autoattribute:: localized
 
 
-.. _page-revision-model-ref:
+.. _revision-model-ref:
 
-``PageRevision``
-================
+``Revision``
+============
 
-Every time a page is edited a new ``PageRevision`` is created and saved to the database. It can be used to find the full history of all changes that have been made to a page and it also provides a place for new changes to be kept before going live.
+Every time a page is edited, a new ``Revision`` is created and saved to the database. It can be used to find the full history of all changes that have been made to a page and it also provides a place for new changes to be kept before going live.
 
- - Revisions can be created from any :class:`~wagtail.core.models.Page` object by calling its :meth:`~Page.save_revision` method
- - The content of the page is JSON-serialised and stored in the :attr:`~PageRevision.content_json` field
- - You can retrieve a ``PageRevision`` as a :class:`~wagtail.core.models.Page` object by calling the :meth:`~PageRevision.as_page_object` method
+- Revisions can be created from any :class:`~wagtail.models.Page` object by calling its :meth:`~Page.save_revision` method
+- The content of the page is JSON-serialisable and stored in the :attr:`~Revision.content` field
+- You can retrieve a ``Revision`` as a :class:`~wagtail.models.Page` object by calling the :meth:`~Revision.as_object` method
+
+.. versionchanged:: 4.0
+
+    The model has been renamed from ``PageRevision`` to ``Revision`` and it now references the ``Page`` model using a :class:`~django.contrib.contenttypes.fields.GenericForeignKey`.
 
 Database fields
 ~~~~~~~~~~~~~~~
 
-.. class:: PageRevision
+.. class:: Revision
 
-    .. attribute:: page
+    .. attribute:: content_object
 
-        (foreign key to :class:`~wagtail.core.models.Page`)
+        (generic foreign key)
+
+        This property returns the object this revision belongs to as an instance of the specific class.
+
+    .. attribute:: content_type
+
+        (foreign key to :class:`~django.contrib.contenttypes.models.ContentType`)
+
+        This is the content type of the object this revision belongs to. For page revisions, this means the content type of the specific page type.
+
+    .. attribute:: base_content_type
+
+        (foreign key to :class:`~django.contrib.contenttypes.models.ContentType`)
+
+        This is the base content type of the object this revision belongs to. For page revisions, this means the content type of the :class:`~wagtail.models.Page` model.
+
+    .. attribute:: object_id
+
+        (string)
+
+        This represents the primary key of the object this revision belongs to.
 
     .. attribute:: submitted_for_moderation
 
@@ -509,47 +548,71 @@ Database fields
 
         This links to the user that created the revision
 
-    .. attribute:: content_json
+    .. attribute:: content
 
-        (text)
+        (dict)
 
         This field contains the JSON content for the page at the time the revision was created
+
+        .. versionchanged:: 3.0
+
+          The field has been renamed from ``content_json`` to ``content`` and it now uses :class:`~django.db.models.JSONField` instead of
+          :class:`~django.db.models.TextField`.
 
 Managers
 ~~~~~~~~
 
-.. class:: PageRevision
+.. class:: Revision
     :noindex:
 
     .. attribute:: objects
 
-        This manager is used to retrieve all of the ``PageRevision`` objects in the database
+        This default manager is used to retrieve all of the ``Revision`` objects in the database. It also provides a :meth:`~wagtail.models.RevisionsManager.for_instance` method that lets you query for revisions of a specific object.
 
         Example:
 
         .. code-block:: python
 
-            PageRevision.objects.all()
+            Revision.objects.all()
+            Revision.objects.for_instance(my_object)
+
+    .. attribute:: page_revisions
+
+        This manager extends the default manager and is used to retrieve all of the ``Revision`` objects that belong to pages.
+
+        Example:
+
+        .. code-block:: python
+
+            Revision.page_revisions.all()
+
+        .. versionadded:: 4.0
+
+            This manager is added as a shorthand to retrieve page revisions.
 
     .. attribute:: submitted_revisions
 
-        This manager is used to retrieve all of the ``PageRevision`` objects that are awaiting moderator approval
+        This manager extends the default manager and is used to retrieve all of the ``Revision`` objects that are awaiting moderator approval.
 
         Example:
 
         .. code-block:: python
 
-            PageRevision.submitted_revisions.all()
+            Revision.submitted_revisions.all()
 
 Methods and properties
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. class:: PageRevision
+.. class:: Revision
     :noindex:
 
-    .. automethod:: as_page_object
+    .. automethod:: as_object
 
-        This method retrieves this revision as an instance of its :class:`~wagtail.core.models.Page` subclass.
+        This method retrieves this revision as an instance of its object's specific class. If the revision belongs to a page, it will be an instance of the :class:`~wagtail.models.Page`'s specific subclass.
+
+        .. versionchanged:: 4.0
+
+            This method has been renamed from ``as_page_object()`` to ``as_object()``.
 
     .. automethod:: approve_moderation
 
@@ -561,11 +624,15 @@ Methods and properties
 
     .. automethod:: is_latest_revision
 
-        Returns ``True`` if this revision is its page's latest revision
+        Returns ``True`` if this revision is the object's latest revision
 
     .. automethod:: publish
 
-        Calling this will copy the content of this revision into the live page object. If the page is in draft, it will be published.
+        Calling this will copy the content of this revision into the live object. If the object is in draft, it will be published.
+
+    .. autoattribute:: base_content_object
+
+        This property returns the object this revision belongs to as an instance of the base class.
 
 ``GroupPagePermission``
 =======================
@@ -581,7 +648,7 @@ Database fields
 
     .. attribute:: page
 
-        (foreign key to :class:`~wagtail.core.models.Page`)
+        (foreign key to :class:`~wagtail.models.Page`)
 
     .. attribute:: permission_type
 
@@ -597,7 +664,7 @@ Database fields
 
     .. attribute:: page
 
-        (foreign key to :class:`~wagtail.core.models.Page`)
+        (foreign key to :class:`~wagtail.models.Page`)
 
     .. attribute:: password
 
@@ -817,9 +884,9 @@ Database fields
 
         The workflow state which started this task state.
 
-    .. attribute:: page revision
+    .. attribute:: page_revision
 
-        (foreign key to ``PageRevision``)
+        (foreign key to ``Revision``)
 
         The page revision this task state was created on.
 
@@ -967,12 +1034,23 @@ Database fields
 
         A foreign key to the user that triggered the action.
 
-    .. attribute:: data_json
+    .. attribute:: revision
 
-        (text)
+        (foreign key to :class:`Revision`)
+
+        A foreign key to the current revision.
+
+    .. attribute:: data
+
+        (dict)
 
         The JSON representation of any additional details for each action.
         e.g. source page id and title when copying from a page. Or workflow id/name and next step id/name on a workflow transition
+
+        .. versionchanged:: 3.0
+
+          The field has been renamed from ``data_json`` to ``data`` and it now uses :class:`~django.db.models.JSONField` instead of
+          :class:`~django.db.models.TextField`.
 
     .. attribute:: timestamp
 
@@ -1000,8 +1078,6 @@ Methods and properties
 
     .. autoattribute:: user_display_name
 
-    .. autoattribute:: data
-
     .. autoattribute:: comment
 
     .. autoattribute:: object_verbose_name
@@ -1026,8 +1102,146 @@ Database fields
 
         A foreign key to the page the action is performed on.
 
-    .. attribute:: revision
 
-        (foreign key to :class:`PageRevision`)
 
-        A foreign key to the current page revision.
+``Comment``
+===========
+
+Represents a comment on a page.
+
+Database fields
+~~~~~~~~~~~~~~~
+
+.. class:: Comment
+
+    .. attribute:: page
+
+        (parental key to :class:`Page`)
+
+        A parental key to the page the comment has been added to.
+
+    .. attribute:: user
+
+        (foreign key to user model)
+
+        A foreign key to the user who added this comment.
+
+    .. attribute:: text
+
+        (text)
+
+        The text content of the comment.
+
+    .. attribute:: contentpath
+
+        (text)
+
+        The path to the field or streamfield block the comment is attached to,
+        in the form ``field`` or ``field.streamfield_block_id``.
+
+    .. attribute:: position
+
+        (text)
+
+        An identifier for the position of the comment within its field. The format
+        used is determined by the field.
+
+    .. attribute:: created_at
+
+        (date/time)
+
+        The date/time when the comment was created.
+
+    .. attribute:: updated_at
+
+        (date/time)
+
+        The date/time when the comment was updated.
+
+    .. attribute:: revision_created
+
+        (foreign key to :class:`Revision`)
+
+        A foreign key to the revision on which the comment was created.
+
+    .. attribute:: resolved_at
+
+        (date/time)
+
+        The date/time when the comment was resolved, if any.
+
+    .. attribute:: resolved_by
+
+        (foreign key to user model)
+
+        A foreign key to the user who resolved this comment, if any.
+
+
+
+``CommentReply``
+================
+
+Represents a reply to a comment thread.
+
+Database fields
+~~~~~~~~~~~~~~~
+
+.. class:: CommentReply
+
+    .. attribute:: comment
+
+        (parental key to :class:`Comment`)
+
+        A parental key to the comment that started the thread.
+
+    .. attribute:: user
+
+        (foreign key to user model)
+
+        A foreign key to the user who added this comment.
+
+    .. attribute:: text
+
+        (text)
+
+        The text content of the comment.
+
+    .. attribute:: created_at
+
+        (date/time)
+
+        The date/time when the comment was created.
+
+    .. attribute:: updated_at
+
+        (date/time)
+
+        The date/time when the comment was updated.
+
+
+
+``PageSubscription``
+====================
+
+Represents a user's subscription to email notifications about page events.
+Currently only used for comment notifications.
+
+Database fields
+~~~~~~~~~~~~~~~
+
+.. class:: PageSubscription
+
+    .. attribute:: page
+
+        (parental key to :class:`Page`)
+
+    .. attribute:: user
+
+        (foreign key to user model)
+
+    .. attribute:: comment_notifications
+
+        (boolean)
+
+        Whether the user should receive comment notifications for all comments,
+        or just comments in threads they participate in.

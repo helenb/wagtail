@@ -1,11 +1,13 @@
 import $ from 'jquery';
 
-function createSnippetChooser(id, modelString) {
+/* global wagtailConfig */
+
+function createSnippetChooser(id) {
   const chooserElement = $('#' + id + '-chooser');
   const docTitle = chooserElement.find('.title');
   const input = $('#' + id);
   const editLink = chooserElement.find('.edit-link');
-  const chooserBaseUrl = chooserElement.data('chooserUrl') + modelString + '/';
+  const chooserBaseUrl = chooserElement.data('chooserUrl');
 
   /*
   Construct initial state of the chooser from the rendered (static) HTML and arguments passed to
@@ -41,10 +43,30 @@ function createSnippetChooser(id, modelString) {
 
       state = newState;
     },
+    getTextLabel: (opts) => {
+      if (!state) return null;
+      const result = state.string;
+      if (opts && opts.maxLength && result.length > opts.maxLength) {
+        return result.substring(0, opts.maxLength - 1) + '…';
+      }
+      return result;
+    },
+    focus: () => {
+      $('.action-choose', chooserElement).focus();
+    },
     openChooserModal: () => {
-      // eslint-disable-next-line no-undef, new-cap
+      let urlQuery = '';
+      if (wagtailConfig.ACTIVE_CONTENT_LOCALE) {
+        // The user is editing a piece of translated content.
+        // Pass the locale along as a request parameter. If this
+        // snippet is also translatable, the results will be
+        // pre-filtered by this locale.
+        urlQuery = '?locale=' + wagtailConfig.ACTIVE_CONTENT_LOCALE;
+      }
+
+      // eslint-disable-next-line no-undef
       ModalWorkflow({
-        url: chooserBaseUrl,
+        url: chooserBaseUrl + urlQuery,
         // eslint-disable-next-line no-undef
         onload: SNIPPET_CHOOSER_MODAL_ONLOAD_HANDLERS,
         responses: {
@@ -58,7 +80,6 @@ function createSnippetChooser(id, modelString) {
     clear: () => {
       chooser.setState(null);
     },
-
   };
 
   $('.action-choose', chooserElement).on('click', () => {

@@ -1,32 +1,32 @@
 {% extends "wagtailadmin/base.html" %}
 {% load i18n wagtailadmin_tags %}
-{% block titletag %}{% blocktrans %}Editing {{ setting_type_name}} - {{ instance }}{% endblocktrans %}{% endblock %}
+{% block titletag %}{% blocktrans trimmed %}Editing {{ setting_type_name}} - {{ instance }}{% endblocktrans %}{% endblock %}
 {% block bodyclass %}menu-settings{% endblock %}
 {% block content %}
-    <header class="nice-padding {% if tabbed %}merged tab-merged{% endif %}">
+    <header class="header merged">
         <div class="row">
             <div class="left">
                 <div class="col">
-                    <h1>
-                        {% icon name="cogs" class_name="header-title-icon" %}
+                    <h1 class="header__title">
+                        {% icon name="cogs" %}
                         {% trans "Editing" %}
-                        <span>{{ setting_type_name|capfirst }}</span>
+                        <span class="header__subtitle">{{ setting_type_name|capfirst }}</span>
                     </h1>
                 </div>
             </div>
             <div class="right">
                 {% if site_switcher %}
-                <div class="field choice_field">
-                    <form method="get" class="setting-site-switch-form" id="settings-site-switch" novalidate>
-                        <label for="{{ site_switcher.site.id_for_label }}">
-                            {% trans "Site" %}:
-                        </label>
-                        <div class="input">
-                            {{ site_switcher.site }}
-                            <span></span>
-                        </div>
-                    </form>
-                </div>
+                    <div class="field choice_field">
+                        <form method="get" class="setting-site-switch-form" id="settings-site-switch" novalidate>
+                            <label for="{{ site_switcher.site.id_for_label }}">
+                                {% trans "Site" %}:
+                            </label>
+                            <div class="input">
+                                {{ site_switcher.site }}
+                                <span></span>
+                            </div>
+                        </form>
+                    </div>
                 {% endif %}
             </div>
         </div>
@@ -36,9 +36,9 @@
         {% csrf_token %}
         {{ edit_handler.render_form_content }}
 
-        <footer>
+        <footer class="footer">
             <ul>
-                <li class="actions dropdown dropup match-width">
+                <li class="actions dropdown dropup match-width footer__container">
                     <button type="submit" class="button button-longrunning" data-clicked-text="{% trans 'Saving…' %}">{% icon name="spinner" %}<em>{% trans 'Save' %}</em></button>
                 </li>
             </ul>
@@ -49,14 +49,10 @@
 
 {% block extra_css %}
     {{ block.super }}
-    {% include "wagtailadmin/pages/_editor_css.html" %}
-    {{ edit_handler.form.media.css }}
-    {{ site_switcher.media.css }}
+    {{ media.css }}
 {% endblock %}
 {% block extra_js %}
     {{ block.super }}
     {% include "wagtailadmin/pages/_editor_js.html" %}
-    {{ edit_handler.form.media.js }}
-    {{ edit_handler.html_declarations }}
-    {{ site_switcher.media.js }}
+    {{ media.js }}
 {% endblock %}

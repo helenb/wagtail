@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-10-23 11:04+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2016-05-11 20:22+0000\n"
+"Last-Translator: Matt Westcott <matthew@torchbox.com>, 2020\n"
 "Language-Team: Estonian (http://www.transifex.com/torchbox/wagtail/language/"
 "et/)\n"
 "MIME-Version: 1.0\n"
@@ -119,9 +119,8 @@ msgstr "Ei, ära kustuta"
 msgid "Home"
 msgstr "Kodu"
 
-#, python-format
-msgid " By %(filter_title)s "
-msgstr "Autor %(filter_title)s"
+msgid "History"
+msgstr "Ajalugu"
 
 #, python-format
 msgid "Sorry, there are no %(name)s matching your search parameters."
@@ -154,16 +153,6 @@ msgstr ""
 #, python-format
 msgid "No %(name)s have been created yet."
 msgstr "%(name)s pole veel loodud."
-
-#, python-format
-msgid ""
-"\n"
-"                                                Why not <a href=\"%(url)s"
-"\">add one</a>?\n"
-"                                            "
-msgstr ""
-"\n"
-"Miks mitte <a href=\"%(url)s\">lisada üks</a>?"
 
 msgid "Pagination"
 msgstr "Lehekülgede otsimine"
@@ -234,3 +223,9 @@ msgstr "Ülevaatus"
 #, python-format
 msgid "Inspecting %s"
 msgstr "%s kontrollimine"
+
+msgid "Action"
+msgstr "Tegevus"
+
+msgid "Date"
+msgstr "Kuupäev"

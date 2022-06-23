@@ -20,7 +20,7 @@ As a web developer, though, you probably already have a good understanding of tr
             captain-picard-day/
             winter-wrap-up/
 
-The Wagtail admin interface uses the tree to organize content for editing, letting you navigate up and down levels in the tree through its Explorer menu. This method of organization is a good place to start in thinking about your own Wagtail models.
+The Wagtail admin interface uses the tree to organise content for editing, letting you navigate up and down levels in the tree through its Explorer menu. This method of organisation is a good place to start in thinking about your own Wagtail models.
 
 
 Nodes and Leaves
@@ -31,7 +31,7 @@ It might be handy to think of the ``Page``-derived models you want to create as 
 
 Nodes
 `````
-Parent nodes on the Wagtail tree probably want to organize and display a browse-able index of their descendants. A blog, for instance, needs a way to show a list of individual posts.
+Parent nodes on the Wagtail tree probably want to organise and display a browse-able index of their descendants. A blog, for instance, needs a way to show a list of individual posts.
 
 A Parent node could provide its own function returning its descendant objects.
 
@@ -86,13 +86,13 @@ Anatomy of a Wagtail Request
 
 For going beyond the basics of model definition and interrelation, it might help to know how Wagtail handles requests and constructs responses. In short, it goes something like:
 
-    #.  Django gets a request and routes through Wagtail's URL dispatcher definitions
-    #.  Wagtail checks the hostname of the request to determine which ``Site`` record will handle this request.
-    #.  Starting from the root page of that site, Wagtail traverses the page tree, calling the ``route()`` method and letting each page model decide whether it will handle the request itself or pass it on to a child page.
-    #.  The page responsible for handling the request returns a ``RouteResult`` object from ``route()``, which identifies the page along with any additional ``args``/``kwargs`` to be passed to ``serve()``.
-    #.  Wagtail calls ``serve()``, which constructs a context using ``get_context()``
-    #.  ``serve()`` finds a template to pass it to using ``get_template()``
-    #.  A response object is returned by ``serve()`` and Django responds to the requester.
+#.  Django gets a request and routes through Wagtail's URL dispatcher definitions
+#.  Wagtail checks the hostname of the request to determine which ``Site`` record will handle this request.
+#.  Starting from the root page of that site, Wagtail traverses the page tree, calling the ``route()`` method and letting each page model decide whether it will handle the request itself or pass it on to a child page.
+#.  The page responsible for handling the request returns a ``RouteResult`` object from ``route()``, which identifies the page along with any additional ``args``/``kwargs`` to be passed to ``serve()``.
+#.  Wagtail calls ``serve()``, which constructs a context using ``get_context()``
+#.  ``serve()`` finds a template to pass it to using ``get_template()``
+#.  A response object is returned by ``serve()`` and Django responds to the requester.
 
 You can apply custom behaviour to this process by overriding ``Page`` class methods such as ``route()`` and ``serve()`` in your own models. For examples, see :ref:`model_recipes`.
 

@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-06-16 11:08+0000\n"
-"Last-Translator: Miłosz Miśkiewicz\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2016-05-11 20:22+0000\n"
+"Last-Translator: Miłosz Miśkiewicz, 2018-2020\n"
 "Language-Team: Polish (http://www.transifex.com/torchbox/wagtail/language/"
 "pl/)\n"
 "MIME-Version: 1.0\n"
@@ -121,9 +121,8 @@ msgstr "Nie usuwaj"
 msgid "Home"
 msgstr "Start"
 
-#, python-format
-msgid " By %(filter_title)s "
-msgstr " Dla %(filter_title)s "
+msgid "History"
+msgstr "Historia"
 
 #, python-format
 msgid "Sorry, there are no %(name)s matching your search parameters."
@@ -156,18 +155,6 @@ msgstr ""
 #, python-format
 msgid "No %(name)s have been created yet."
 msgstr "Żadna %(name)s nie została jeszcze utworzona."
-
-#, python-format
-msgid ""
-"\n"
-"                                                Why not <a href=\"%(url)s"
-"\">add one</a>?\n"
-"                                            "
-msgstr ""
-"\n"
-"                                                Dlaczego nie <a href="
-"\"%(url)s\">dodać jednego</a>?\n"
-"                                            "
 
 msgid "Pagination"
 msgstr "Stronicowanie"
@@ -238,3 +225,9 @@ msgstr "Sprawdzanie"
 #, python-format
 msgid "Inspecting %s"
 msgstr "Sprawdzanie %s"
+
+msgid "Action"
+msgstr "Akcja"
+
+msgid "Date"
+msgstr "Data"

@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-10-23 11:11+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:05+0000\n"
+"Last-Translator: Matt Westcott <matthew@torchbox.com>, 2020\n"
 "Language-Team: Estonian (http://www.transifex.com/torchbox/wagtail/language/"
 "et/)\n"
 "MIME-Version: 1.0\n"
@@ -67,6 +67,12 @@ msgstr "Joondatud vasakule"
 msgid "Right-aligned"
 msgstr "Paremale joondatud"
 
+msgid "Collection"
+msgstr "Kogumine"
+
+msgid "Alt text"
+msgstr "Alt-tekst"
+
 msgid "Filter"
 msgstr "Filtreeri"
 
@@ -109,6 +115,9 @@ msgstr "Muuda"
 msgid "Edit any image"
 msgstr "Muutke suvalist pilti"
 
+msgid "Choose"
+msgstr "Valige"
+
 msgid "title"
 msgstr "pealkiri"
 
@@ -136,6 +145,18 @@ msgstr "pilt"
 msgid "images"
 msgstr "pilte"
 
+#, python-format
+msgid "Used %(usage_count)s time"
+msgid_plural "Used %(usage_count)s times"
+msgstr[0] "Kasutatud %(usage_count)s korda"
+msgstr[1] "Kasutatud %(usage_count)s korda"
+
+msgid "Yes, delete"
+msgstr "Jah, kustuta"
+
+msgid "No, don't delete"
+msgstr "Ei, ära kustuta"
+
 msgid "Choose an image"
 msgstr "Valige pilt"
 
@@ -148,24 +169,11 @@ msgstr "Laadi üles"
 msgid "Popular tags"
 msgstr "Populaarsed sildid"
 
-msgid "Uploading…"
-msgstr "Üleslaadimine ..."
+msgid "Existing"
+msgstr "Olemasolev"
 
-#, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-"On olemas%(counter)s vaste"
-msgstr[1] ""
-"\n"
-"On olemas %(counter)s vastet"
+msgid "New"
+msgstr "Uus"
 
 msgid "Latest images"
 msgstr "Uusimad pildid"
@@ -176,25 +184,8 @@ msgstr "Valige vorming"
 msgid "Insert image"
 msgstr "Sisesta pilt"
 
-#, python-format
-msgid ""
-"\n"
-"        <span>%(total)s</span> Image <span class=\"visuallyhidden\">created "
-"in %(site_name)s</span>\n"
-"    "
-msgid_plural ""
-"\n"
-"        <span>%(total)s</span> Images <span class=\"visuallyhidden\">created "
-"in %(site_name)s</span>\n"
-"    "
-msgstr[0] ""
-"\n"
-"<span>%(total)s</span> Pilti <span class=\"visuallyhidden\">loodud "
-"%(site_name)s</span>"
-msgstr[1] ""
-"\n"
-"<span>%(total)s</span> Pilti <span class=\"visuallyhidden\">loodud "
-"%(site_name)s</span> "
+msgid "Uploading…"
+msgstr "Üleslaadimine ..."
 
 msgid "Change image file:"
 msgstr "Pildifaili muutmine:"
@@ -210,21 +201,6 @@ msgstr "Salvesta"
 
 msgid "Delete image"
 msgstr "Kustuta pilt"
-
-#, python-format
-msgid "Used %(usage_count)s time"
-msgid_plural "Used %(usage_count)s times"
-msgstr[0] "Kasutatud %(usage_count)s korda"
-msgstr[1] "Kasutatud %(usage_count)s korda"
-
-msgid "Are you sure you want to delete this image?"
-msgstr "Kas soovite selle pildi kindlasti kustutada?"
-
-msgid "Yes, delete"
-msgstr "Jah, kustuta"
-
-msgid "No, don't delete"
-msgstr "Ei, ära kustuta"
 
 #, python-format
 msgid "Editing image %(title)s"
@@ -367,17 +343,8 @@ msgstr "Vabandust, üleslaadimine ebaõnnestus."
 msgid "Server Error"
 msgstr "Serveri viga"
 
-msgid "Report this error to your webmaster with the following information:"
-msgstr "Teatage sellest veast oma veebimeistrile järgmise teabega:"
-
 msgid "Image updated."
 msgstr "Pilt on värskendatud."
-
-msgid "Update"
-msgstr "Uuenda"
-
-msgid "Delete"
-msgstr "Kustuta"
 
 msgid "Image permissions"
 msgstr "Pildi load"
@@ -385,9 +352,13 @@ msgstr "Pildi load"
 msgid "Add an image permission"
 msgstr "Lisage pildiluba"
 
+msgid "Delete"
+msgstr "Kustuta"
+
 msgid "Search images"
 msgstr "Piltide otsimine"
 
+#, python-brace-format
 msgid "Image '{0}' updated."
 msgstr "Pilt „{0}” on värskendatud."
 
@@ -402,9 +373,11 @@ msgid ""
 "the image."
 msgstr "Allikapildifaili ei leitud. Palun muutke allikat või kustutage pilt."
 
+#, python-brace-format
 msgid "Image '{0}' deleted."
 msgstr "Pilt '{0}' on kustutatud."
 
+#, python-brace-format
 msgid "Image '{0}' added."
 msgstr "Pilt '{0}' on lisatud."
 

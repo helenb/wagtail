@@ -3,27 +3,30 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Amós Oviedo <amos.oviedo@gmail.com>, 2022
 # Daniel Wohlgemuth <daniel.wohlgemuth.epp@gmail.com>, 2020
 # Amós Oviedo <amos.oviedo@gmail.com>, 2014
 # Joaquín T <joaquintita@gmail.com>, 2014
 # José Luis <alagunajs@gmail.com>, 2015
 # José Luis <alagunajs@gmail.com>, 2015,2018
+# Matt Westcott <matthew@torchbox.com>, 2021
 # Mauricio Baeza <python@amigos.email>, 2015
 # Mauricio Baeza <python@amigos.email>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-09-23 01:42+0000\n"
-"Last-Translator: Daniel Wohlgemuth <daniel.wohlgemuth.epp@gmail.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2015-08-26 14:04+0000\n"
+"Last-Translator: Amós Oviedo <amos.oviedo@gmail.com>, 2022\n"
 "Language-Team: Spanish (http://www.transifex.com/torchbox/wagtail/language/"
 "es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 msgid "Wagtail search promotions"
 msgstr "Promociones de búsqueda Wagtail"
@@ -47,35 +50,6 @@ msgstr "Añadir promoción de búsqueda"
 
 msgid "Add search pick"
 msgstr "Añadir selección de búsqueda"
-
-msgid ""
-"\n"
-"                <p>Promoted search results are a means of recommending "
-"specific pages that might not organically come high up in search results. E."
-"g recommending your primary donation page to a user searching with the less "
-"common term \"<em>giving</em>\".</p>\n"
-"            "
-msgstr ""
-"\n"
-"<p>Resultados promovidos son medios para recomendar páginas específicas que "
-"pueden no aparecer en los primeros puestos de los resultados de búsqueda. "
-"Por ejemplo: recomendar un sitio de donaciones utilizando términos menos "
-"frecuentes como \"<em>donar</em>\".</p>"
-
-msgid ""
-"\n"
-"                <p>The \"Search term(s)/phrase\" field below must contain "
-"the full and exact search for which you wish to provide recommended results, "
-"<em>including</em> any misspellings/user error. To help, you can choose from "
-"search terms that have been popular with users of your site.</p>\n"
-"            "
-msgstr ""
-"\n"
-"<p>El campo de \"término(s) de búsqueda/frase\", debe contener la búsqueda "
-"completa y exacta para que se proporcionen los resultados recomendados, "
-"<em>incluyendo</em> cualquier error de ortografía o error accidental del "
-"usuario. Para ayudarte, puedes elegir entre los términos de búsqueda que han "
-"sido más populares entre los usuarios de su sitio.</p>"
 
 msgid "Save"
 msgstr "Guardar"
@@ -152,22 +126,11 @@ msgid "None"
 msgstr "Ninguna"
 
 #, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-"            Hay %(counter)s coincidencia\n"
-"        "
-msgstr[1] ""
-"\n"
-"            Hay %(counter)s coincidencias\n"
-"        "
+msgid "There is %(counter)s match"
+msgid_plural "There are %(counter)s matches"
+msgstr[0] "Hay %(counter)s coincidencia"
+msgstr[1] "Hay %(counter)s coincidencias"
+msgstr[2] "Hay %(counter)s coincidencias"
 
 #, python-format
 msgid "Sorry, no promoted results match \"<em>%(query_string)s</em>\""
@@ -186,6 +149,7 @@ msgstr ""
 msgid "Search promoted results"
 msgstr "Buscar resultados promovidos"
 
+#, python-brace-format
 msgid "Editor's picks for '{0}' created."
 msgstr "Selecciones del editor para '{0}' creadas."
 
@@ -195,6 +159,7 @@ msgstr "Editar"
 msgid "Recommendations have not been created due to errors"
 msgstr "Las recomendaciones no han sido creadas debido a errores "
 
+#, python-brace-format
 msgid "Editor's picks for '{0}' updated."
 msgstr "Selecciones del editor para '{0}' actualizadas."
 
@@ -202,4 +167,4 @@ msgid "Recommendations have not been saved due to errors"
 msgstr "Las recomendaciones no han sido guardadas debido a errores"
 
 msgid "Editor's picks deleted."
-msgstr "Selecciones del editor para '{0}' eliminadas."
+msgstr "Selecciones del editor eliminadas."

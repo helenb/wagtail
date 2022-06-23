@@ -7,14 +7,14 @@
 # IT Management <hudan@itmanagement.cz>, 2020
 # Jiri Stepanek <stepiiicz@gmail.com>, 2015
 # Marek Turnovec <aesculap@gmail.com>, 2016
-# Mirek Zvolský <zvolsky@seznam.cz>, 2019-2020
+# Mirek Zvolský <zvolsky@seznam.cz>, 2019-2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-04-22 07:33+0000\n"
-"Last-Translator: Mirek Zvolský <zvolsky@seznam.cz>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:05+0000\n"
+"Last-Translator: Mirek Zvolský <zvolsky@seznam.cz>, 2019-2021\n"
 "Language-Team: Czech (http://www.transifex.com/torchbox/wagtail/language/"
 "cs/)\n"
 "MIME-Version: 1.0\n"
@@ -71,6 +71,23 @@ msgstr "Zarovnané doleva"
 msgid "Right-aligned"
 msgstr "Zarovnané doprava"
 
+msgid "Collection"
+msgstr "Soubor (kolekce)"
+
+msgid "Format"
+msgstr "Formát"
+
+msgid "Image is decorative"
+msgstr "Obrázek je dekorační"
+
+msgid "Alt text"
+msgstr "Alternativní text"
+
+msgid "Please add some alt text for your image or mark it as decorative"
+msgstr ""
+"Prosím buď zadejte alternativní text pro váš obrázek a nebo jej označte jako "
+"dekorační"
+
 msgid "Filter"
 msgstr "Filtr"
 
@@ -113,6 +130,12 @@ msgstr "Upravit"
 msgid "Edit any image"
 msgstr "Upravit jakýkoliv obrázek"
 
+msgid "Choose"
+msgstr "Vyber"
+
+msgid "Select images in choosers"
+msgstr "Vyber obrázky pomocí výběrových prvků"
+
 msgid "title"
 msgstr "název"
 
@@ -140,6 +163,20 @@ msgstr "obrázek"
 msgid "images"
 msgstr "obrázky"
 
+#, python-format
+msgid "Used %(usage_count)s time"
+msgid_plural "Used %(usage_count)s times"
+msgstr[0] "Použito %(usage_count)sx"
+msgstr[1] "Použito %(usage_count)sx"
+msgstr[2] "Použito %(usage_count)sx"
+msgstr[3] "Použito %(usage_count)sx"
+
+msgid "Yes, delete"
+msgstr "Ano, smazat"
+
+msgid "No, don't delete"
+msgstr "Ne, nemazat"
+
 msgid "Choose an image"
 msgstr "Zvolit obrázek"
 
@@ -152,30 +189,11 @@ msgstr "Nahrát"
 msgid "Popular tags"
 msgstr "Oblíbené štítky"
 
-msgid "Uploading…"
-msgstr "Nahrávání…"
+msgid "Existing"
+msgstr "Existující"
 
-#, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-"Nalezen %(counter)s výsledek"
-msgstr[1] ""
-"\n"
-"Nalezeny %(counter)s výsledky"
-msgstr[2] ""
-"\n"
-"Nalezeno %(counter)s výsledků"
-msgstr[3] ""
-"\n"
-"Nalezeno %(counter)s výsledků"
+msgid "New"
+msgstr "Nový"
 
 msgid "Latest images"
 msgstr "Poslední obrázky"
@@ -186,37 +204,8 @@ msgstr "Zvolte formát"
 msgid "Insert image"
 msgstr "Vložit obrázek"
 
-#, python-format
-msgid ""
-"\n"
-"        <span>%(total)s</span> Image <span class=\"visuallyhidden\">created "
-"in %(site_name)s</span>\n"
-"    "
-msgid_plural ""
-"\n"
-"        <span>%(total)s</span> Images <span class=\"visuallyhidden\">created "
-"in %(site_name)s</span>\n"
-"    "
-msgstr[0] ""
-"\n"
-"        <span>%(total)s</span> Obrázek <span class=\"visuallyhidden"
-"\">vytvořený v %(site_name)s</span>\n"
-"    "
-msgstr[1] ""
-"\n"
-"        <span>%(total)s</span> Obrázky <span class=\"visuallyhidden"
-"\">vytvořené v %(site_name)s</span>\n"
-"    "
-msgstr[2] ""
-"\n"
-"        <span>%(total)s</span> Obrázků <span class=\"visuallyhidden"
-"\">vytvořených v %(site_name)s</span>\n"
-"    "
-msgstr[3] ""
-"\n"
-"        <span>%(total)s</span> Obrázků <span class=\"visuallyhidden"
-"\">vytvořených v %(site_name)s</span>\n"
-"    "
+msgid "Uploading…"
+msgstr "Nahrávání…"
 
 msgid "Change image file:"
 msgstr "Změnit soubor obrázku:"
@@ -232,23 +221,6 @@ msgstr "Uložit"
 
 msgid "Delete image"
 msgstr "Smazat obrázek"
-
-#, python-format
-msgid "Used %(usage_count)s time"
-msgid_plural "Used %(usage_count)s times"
-msgstr[0] "Použito %(usage_count)sx"
-msgstr[1] "Použito %(usage_count)sx"
-msgstr[2] "Použito %(usage_count)sx"
-msgstr[3] "Použito %(usage_count)sx"
-
-msgid "Are you sure you want to delete this image?"
-msgstr "Opravdu chcete smazat tento obrázek?"
-
-msgid "Yes, delete"
-msgstr "Ano, smazat"
-
-msgid "No, don't delete"
-msgstr "Ne, nemazat"
 
 #, python-format
 msgid "Editing image %(title)s"
@@ -391,17 +363,8 @@ msgstr "Nahrání obrázků na server selhalo."
 msgid "Server Error"
 msgstr "Chyba serveru"
 
-msgid "Report this error to your webmaster with the following information:"
-msgstr "Nahlašte tuto chybu správci serveru s následujícími informacemi:"
-
 msgid "Image updated."
 msgstr "Obrázek aktualizován."
-
-msgid "Update"
-msgstr "Uložit"
-
-msgid "Delete"
-msgstr "Smazat"
 
 msgid "Image permissions"
 msgstr "Oprávnění obrázku"
@@ -409,9 +372,13 @@ msgstr "Oprávnění obrázku"
 msgid "Add an image permission"
 msgstr "Přidat oprávnění obrázku"
 
+msgid "Delete"
+msgstr "Smazat"
+
 msgid "Search images"
 msgstr "Hledat obrázky"
 
+#, python-brace-format
 msgid "Image '{0}' updated."
 msgstr "Obrázek '{0}' byl upraven."
 
@@ -428,9 +395,11 @@ msgstr ""
 "Zdrojový soubor obrázku není možné nalézt. Prosím změňte zdroj nebo obrázek "
 "smažte."
 
+#, python-brace-format
 msgid "Image '{0}' deleted."
 msgstr "Obrázek '{0}' byl smazán."
 
+#, python-brace-format
 msgid "Image '{0}' added."
 msgstr "Obrázek '{0}' byl přidán."
 

@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-07-24 16:51+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-19 11:54+0000\n"
+"Last-Translator: pyzenberg <pyzenberg@gmail.com>, 2017\n"
 "Language-Team: Persian (http://www.transifex.com/torchbox/wagtail/language/"
 "fa/)\n"
 "MIME-Version: 1.0\n"
@@ -92,26 +92,14 @@ msgstr "زبانی را برای راهبری انتخاب کنید"
 msgid "user profile"
 msgstr "پروفایل کاربر"
 
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Yes, delete"
+msgstr "بله حذف شود"
+
 msgid "Delete group"
 msgstr "حذف گروه"
-
-#, python-format
-msgid ""
-"\n"
-"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
-"strong> member.\n"
-"            "
-msgid_plural ""
-"\n"
-"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
-"strong> members.\n"
-"            "
-msgstr[0] ""
-"\n"
-"گروه «%(group_name)s» تعداد <strong>%(group_user_count)s</strong> عضو دارد."
-msgstr[1] ""
-"\n"
-"گروه «%(group_name)s» تعداد <strong>%(group_user_count)s</strong> عضو دارد."
 
 msgid ""
 "Deleting this group will revoke this group's permissions from all member "
@@ -120,9 +108,6 @@ msgstr "حذف این گروه باعث لغو مجوزهای گروه از تم
 
 msgid "Are you sure you want to delete this group?"
 msgstr "آیا میخواهید این گروه را حذف کنید؟"
-
-msgid "Yes, delete"
-msgstr "بله حذف شود"
 
 msgid "Add group"
 msgstr "افزودن گروه"
@@ -145,9 +130,6 @@ msgstr "افزودن"
 msgid "Change"
 msgstr "تغییر"
 
-msgid "Delete"
-msgstr "حذف"
-
 msgid "Other permissions"
 msgstr "مجوزهای دیگر"
 
@@ -159,12 +141,6 @@ msgstr "صفحه"
 
 msgid "Add a page permission"
 msgstr "افزودن مجوز صفحه"
-
-msgid "groups"
-msgstr "گروه ها"
-
-msgid "Add a group"
-msgstr "افزودن گروه"
 
 #, python-format
 msgid ""
@@ -214,30 +190,41 @@ msgid "Inactive"
 msgstr "غیرفعال"
 
 #, python-format
+msgid "%(time_period)s ago"
+msgstr "%(time_period)s پیش"
+
+#, python-format
 msgid "Sorry, no users match \"<em>%(query_string)s</em>\""
 msgstr "متاسفانه هیچ کاربری با «<em>%(query_string)s</em>» منطبق نبود"
 
 msgid "Groups"
 msgstr "گروه ها"
 
+msgid "Add a group"
+msgstr "افزودن گروه"
+
 msgid "Search groups"
 msgstr "جستجوی گروه‌ها"
 
+#, python-brace-format
 msgid "Group '{0}' created."
 msgstr "گروه '{0}' ایجاد شد."
 
+#, python-brace-format
 msgid "Group '{0}' updated."
 msgstr "گروه  '{0}'  بروزرسانی شد."
 
 msgid "The group could not be saved due to errors."
 msgstr "به دلیل بروز خطا گروه ذخیره نشد."
 
+#, python-brace-format
 msgid "Group '{0}' deleted."
 msgstr "گروه '{0}' حذف شد."
 
 msgid "Search users"
 msgstr "جستجوی کاربران"
 
+#, python-brace-format
 msgid "User '{0}' created."
 msgstr "کاربر '{0}' ایجاد شد."
 
@@ -247,9 +234,14 @@ msgstr "ویرایش"
 msgid "The user could not be created due to errors."
 msgstr "به دلیل بروز خطا کاربر ایجاد نشد"
 
+#, python-brace-format
+msgid "User '{0}' updated."
+msgstr "کاربر  '{0}' بروزرسانی شد."
+
 msgid "The user could not be saved due to errors."
 msgstr "به دلیل بروز خطا کاربر ذخیره نشد"
 
+#, python-brace-format
 msgid "User '{0}' deleted."
 msgstr "کاربر '{0}' حذف شد."
 

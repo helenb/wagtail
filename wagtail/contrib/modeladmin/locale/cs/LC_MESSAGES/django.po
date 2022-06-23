@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-04-22 07:34+0000\n"
-"Last-Translator: Mirek Zvolský <zvolsky@seznam.cz>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2016-05-11 20:22+0000\n"
+"Last-Translator: Mirek Zvolský <zvolsky@seznam.cz>, 2019-2020\n"
 "Language-Team: Czech (http://www.transifex.com/torchbox/wagtail/language/"
 "cs/)\n"
 "MIME-Version: 1.0\n"
@@ -121,9 +121,8 @@ msgstr "Ne, nemazat"
 msgid "Home"
 msgstr "Domů"
 
-#, python-format
-msgid " By %(filter_title)s "
-msgstr " Pomocí %(filter_title)s "
+msgid "History"
+msgstr "Historie"
 
 #, python-format
 msgid "Sorry, there are no %(name)s matching your search parameters."
@@ -158,18 +157,6 @@ msgstr ""
 #, python-format
 msgid "No %(name)s have been created yet."
 msgstr "Žádný(á/é) %(name)s ještě nebyl(a/o) vytvořen(a/o)."
-
-#, python-format
-msgid ""
-"\n"
-"                                                Why not <a href=\"%(url)s"
-"\">add one</a>?\n"
-"                                            "
-msgstr ""
-"\n"
-"                                                Pojďme <a href=\"%(url)s"
-"\">nějaký(ou/é) přidat</a>?\n"
-"                                            "
 
 msgid "Pagination"
 msgstr "Stránkování"
@@ -240,3 +227,9 @@ msgstr "Prohlíží se.."
 #, python-format
 msgid "Inspecting %s"
 msgstr "Prohlíží se %s"
+
+msgid "Action"
+msgstr "Akce"
+
+msgid "Date"
+msgstr "Datum"

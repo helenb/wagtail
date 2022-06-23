@@ -17,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-07-24 16:51+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-19 11:54+0000\n"
+"Last-Translator: Yiannis Inglessis <negtheone@gmail.com>, 2016\n"
 "Language-Team: Greek (http://www.transifex.com/torchbox/wagtail/language/"
 "el/)\n"
 "MIME-Version: 1.0\n"
@@ -101,30 +101,17 @@ msgstr "Λήψη ειδοποίησης όταν σελίδα επεξεργασ
 msgid "user profile"
 msgstr "προφίλ χρήστη"
 
+msgid "Delete"
+msgstr "Διαγραφή"
+
+msgid "Yes, delete"
+msgstr "Ναι, να διαγραφεί"
+
+msgid "No, don't delete"
+msgstr "Ακύρωση διαγραφής"
+
 msgid "Delete group"
 msgstr "Διαγραφή ομάδας"
-
-#, python-format
-msgid ""
-"\n"
-"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
-"strong> member.\n"
-"            "
-msgid_plural ""
-"\n"
-"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
-"strong> members.\n"
-"            "
-msgstr[0] ""
-"\n"
-"                Η ομάδα '%(group_name)s' έχει <strong>%(group_user_count)s</"
-"strong> μέλη.\n"
-"            "
-msgstr[1] ""
-"\n"
-"                Η ομάδα '%(group_name)s' έχει <strong>%(group_user_count)s</"
-"strong> μέλη.\n"
-"            "
 
 msgid ""
 "Deleting this group will revoke this group's permissions from all member "
@@ -135,9 +122,6 @@ msgstr ""
 
 msgid "Are you sure you want to delete this group?"
 msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετε αυτή την ομάδα;"
-
-msgid "Yes, delete"
-msgstr "Ναι, να διαγραφεί"
 
 msgid "Add group"
 msgstr "Προσθήκη ομαδας"
@@ -160,9 +144,6 @@ msgstr "Προσθήκη"
 msgid "Change"
 msgstr "Αλλαγή"
 
-msgid "Delete"
-msgstr "Διαγραφή"
-
 msgid "Other permissions"
 msgstr "Άλλα δικαιώματα"
 
@@ -174,12 +155,6 @@ msgstr "Σελίδα"
 
 msgid "Add a page permission"
 msgstr "Προσθήκη άδειας σελίδας"
-
-msgid "groups"
-msgstr "ομάδες"
-
-msgid "Add a group"
-msgstr "Προσθήκη ομαδας"
 
 #, python-format
 msgid ""
@@ -229,30 +204,41 @@ msgid "Inactive"
 msgstr "Μη ενεργός"
 
 #, python-format
+msgid "%(time_period)s ago"
+msgstr "πριν από %(time_period)s"
+
+#, python-format
 msgid "Sorry, no users match \"<em>%(query_string)s</em>\""
 msgstr "Λυπούμαστε, δε ταιριάζουν χρήστες με το \"<em>%(query_string)s</em>\""
 
 msgid "Groups"
 msgstr "Ομάδες"
 
+msgid "Add a group"
+msgstr "Προσθήκη ομαδας"
+
 msgid "Search groups"
 msgstr "Αναζήτηση ομαδων"
 
+#, python-brace-format
 msgid "Group '{0}' created."
 msgstr "Η ομαδα '{0}' δημιουργήθηκε."
 
+#, python-brace-format
 msgid "Group '{0}' updated."
 msgstr "Η ομαδα '{0}' ενημερώθηκε."
 
 msgid "The group could not be saved due to errors."
 msgstr "Δεν ήταν δυνατή η ενημέρωση των στοιχείων της ομαδας"
 
+#, python-brace-format
 msgid "Group '{0}' deleted."
 msgstr "Η ομαδα '{0}' διαγράφηκε."
 
 msgid "Search users"
 msgstr "Αναζήτηση χρηστών"
 
+#, python-brace-format
 msgid "User '{0}' created."
 msgstr "Ο χρήστης '{0}' δημιουργήθηκε."
 
@@ -262,9 +248,14 @@ msgstr "Επεξεργασία"
 msgid "The user could not be created due to errors."
 msgstr "Δεν ήταν δυνατή η δημιουργία του χρήστη."
 
+#, python-brace-format
+msgid "User '{0}' updated."
+msgstr "Τα στοιχεία του χρήστη '{0}' ενημερώθηκαν."
+
 msgid "The user could not be saved due to errors."
 msgstr "Δεν ήταν δυνατή η ενημέρωση των στοιχείων του χρήστη."
 
+#, python-brace-format
 msgid "User '{0}' deleted."
 msgstr "Ο χρήστης '{0}' διαγράφηκε."
 

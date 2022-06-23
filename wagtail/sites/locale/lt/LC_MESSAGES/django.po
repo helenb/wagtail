@@ -4,13 +4,14 @@
 #
 # Translators:
 # Matas Dailyda <matas@dailyda.com>, 2017
+# Naglis Jonaitis, 2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2018-05-04 19:31+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-10-03 15:24+0000\n"
+"Last-Translator: Naglis Jonaitis, 2022\n"
 "Language-Team: Lithuanian (http://www.transifex.com/torchbox/wagtail/"
 "language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -21,29 +22,14 @@ msgstr ""
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
 
+msgid "Wagtail sites"
+msgstr "Wagtail tinklalapiai"
+
 msgid "Choose a root page"
 msgstr "Pasirinkti šakninį puslapį"
 
 msgid "Choose a different root page"
 msgstr "Pasirinkti kitą šakninį puslapį"
-
-msgid "Site"
-msgstr "Tinklalapis"
-
-msgid "Port"
-msgstr "Prievadas"
-
-msgid "Site name"
-msgstr "Tinklalapio pavadinimas"
-
-msgid "Root page"
-msgstr "Šakninis puslapis"
-
-msgid "Default?"
-msgstr "Numatytasis?"
-
-msgid "Default"
-msgstr "Numatytasis"
 
 msgid "Sites"
 msgstr "Tinklalapiai"
@@ -51,12 +37,23 @@ msgstr "Tinklalapiai"
 msgid "Add a site"
 msgstr "Pridėti tinklalapį"
 
+msgid "Site"
+msgstr "Tinklalapis"
+
+msgid "Default?"
+msgstr "Numatytasis?"
+
+msgid "Default"
+msgstr "Numatytasis"
+
 msgid "Add site"
 msgstr "Pridėti tinklalapį"
 
+#, python-brace-format
 msgid "Site '{0}' created."
 msgstr "Tinklalapis '{0}' sukurtas."
 
+#, python-brace-format
 msgid "Site '{0}' updated."
 msgstr "Tinklalapis '{0}' atnaujintas."
 
@@ -66,6 +63,7 @@ msgstr "Šis tinklalapis negali būti išsaugotas dėl klaidų."
 msgid "Delete site"
 msgstr "Ištrinti tinklalapį"
 
+#, python-brace-format
 msgid "Site '{0}' deleted."
 msgstr "Tinklalapis '{0}' ištrintas."
 

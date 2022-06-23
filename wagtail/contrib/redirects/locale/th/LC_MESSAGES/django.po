@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-07-24 16:51+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:04+0000\n"
+"Last-Translator: Walaksawan Vervoort <nula_wala@yahoo.com>, 2019\n"
 "Language-Team: Thai (http://www.transifex.com/torchbox/wagtail/language/"
 "th/)\n"
 "MIME-Version: 1.0\n"
@@ -22,6 +22,9 @@ msgstr ""
 msgid "Wagtail redirects"
 msgstr "การกำหนดทิศทางใหม่ของWagtail"
 
+msgid "Type"
+msgstr "แบบ,รูปแบบ"
+
 msgid "From site"
 msgstr "จากเว็บไซด์"
 
@@ -30,6 +33,10 @@ msgstr "ทุกเว็บไซด์"
 
 msgid "A redirect with this path already exists."
 msgstr "การกำหนดทิศทางใหม่นี้มีอยู่แล้ว"
+
+#, python-format
+msgid "Supported formats: %(supported_formats)s."
+msgstr "รูปที่สามารถใช้ได้: %(supported_formats)s."
 
 msgid "redirect from"
 msgstr "การกำหนดทิศทางใหม่จาก"
@@ -52,6 +59,9 @@ msgstr "การกำหนดหน้าใหม่"
 
 msgid "redirect to any URL"
 msgstr "การกำหนด URL อันไหนก็ได้"
+
+msgid "created at"
+msgstr "ถูกสร้างที่"
 
 msgid "temporary"
 msgstr "ชั่วคราว"
@@ -81,6 +91,9 @@ msgstr "คุณแน่ใจว่าคุณต้องการจะล
 msgid "Yes, delete"
 msgstr "ใช่,ลบทิ้ง"
 
+msgid "Preview"
+msgstr "ภาพตัวอย่าง"
+
 #, python-format
 msgid "Editing %(title)s"
 msgstr "กำลังแก้ไข %(title)s"
@@ -97,28 +110,14 @@ msgstr "จาก"
 msgid "To"
 msgstr "ถึง"
 
+msgid "Continue"
+msgstr "ต่อ,ต่อเนื่อง"
+
 msgid "Site"
 msgstr "เว็บไซด์"
 
-msgid "Type"
-msgstr "แบบ,รูปแบบ"
-
 msgid "Edit this redirect"
 msgstr "แก้ไขการกำหนดทิศทางนี้"
-
-#, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-" มี %(counter)s ที่ตรงกัน\n"
-" "
 
 #, python-format
 msgid "Sorry, no redirects match \"<em>%(query_string)s</em>\""
@@ -135,6 +134,7 @@ msgstr ""
 msgid "Search redirects"
 msgstr "ค้นหาหลายการกำหนดทิศทาง"
 
+#, python-brace-format
 msgid "Redirect '{0}' updated."
 msgstr "การกำหนดทิศทาง'{0}'ถูกอัพเดทแล้ว"
 
@@ -144,9 +144,11 @@ msgstr "แก้ไข"
 msgid "The redirect could not be saved due to errors."
 msgstr "การกำหนดทิศทางไม่สามารถเซฟได้ในขณะที่เกิดข้อผิดพลาด"
 
+#, python-brace-format
 msgid "Redirect '{0}' deleted."
 msgstr "การกำหนดทิศทาง'{0}'ถูกลบทิ้งแล้ว"
 
+#, python-brace-format
 msgid "Redirect '{0}' added."
 msgstr "การกำหนดทิศทาง'{0}'ถูกเพิ่มแล้ว"
 

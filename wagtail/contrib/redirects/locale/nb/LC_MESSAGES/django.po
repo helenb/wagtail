@@ -9,9 +9,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-07-24 16:51+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:04+0000\n"
+"Last-Translator: Stein Strindhaug <stein.strindhaug@gmail.com>, "
+"2016,2018-2019\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/torchbox/wagtail/"
 "language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +24,15 @@ msgstr ""
 msgid "Wagtail redirects"
 msgstr "Wagtail-videresending"
 
+msgid "Type"
+msgstr "Type"
+
+msgid "Permanent"
+msgstr "Permanent"
+
+msgid "All"
+msgstr "Alle"
+
 msgid "From site"
 msgstr "Fra nettsted"
 
@@ -31,6 +41,10 @@ msgstr "Alle nettsteder"
 
 msgid "A redirect with this path already exists."
 msgstr "En videresending med denne stien eksisterer allerede."
+
+#, python-format
+msgid "Supported formats: %(supported_formats)s."
+msgstr "Støttede formater: %(supported_formats)s."
 
 msgid "redirect from"
 msgstr "videresend fra"
@@ -53,6 +67,9 @@ msgstr "videresend til en side"
 
 msgid "redirect to any URL"
 msgstr "videresend til URL"
+
+msgid "created at"
+msgstr "opprettet"
 
 msgid "temporary"
 msgstr "midlertidig"
@@ -82,6 +99,9 @@ msgstr "Er du sikker på at du vil slette denne videresendingen?"
 msgid "Yes, delete"
 msgstr "Ja, slett"
 
+msgid "Preview"
+msgstr "Forhåndsvis"
+
 #, python-format
 msgid "Editing %(title)s"
 msgstr "Endrer %(title)s"
@@ -98,32 +118,14 @@ msgstr "Fra"
 msgid "To"
 msgstr "Til"
 
+msgid "Continue"
+msgstr "Fortsett"
+
 msgid "Site"
 msgstr "Nettsted"
 
-msgid "Type"
-msgstr "Type"
-
 msgid "Edit this redirect"
 msgstr "Endre denne videresendingen"
-
-#, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-"            Det er %(counter)s treff\n"
-"        "
-msgstr[1] ""
-"\n"
-"            Det er %(counter)s treff\n"
-"        "
 
 #, python-format
 msgid "Sorry, no redirects match \"<em>%(query_string)s</em>\""
@@ -141,6 +143,7 @@ msgstr ""
 msgid "Search redirects"
 msgstr "Videresendinger for søk"
 
+#, python-brace-format
 msgid "Redirect '{0}' updated."
 msgstr "Videresendingen \"{0}\" er oppdatert."
 
@@ -150,9 +153,11 @@ msgstr "Endre"
 msgid "The redirect could not be saved due to errors."
 msgstr "Videresendingen kunne ikke lagres grunnet feil."
 
+#, python-brace-format
 msgid "Redirect '{0}' deleted."
 msgstr "Videresendingen \"{0}\" er slettet."
 
+#, python-brace-format
 msgid "Redirect '{0}' added."
 msgstr "Videresendingen \"{0}\" er lagt til."
 

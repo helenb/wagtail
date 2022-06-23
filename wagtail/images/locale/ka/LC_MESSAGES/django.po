@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-01-20 20:14+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:05+0000\n"
+"Last-Translator: André Bouatchidzé <a@anbz.net>, 2015\n"
 "Language-Team: Georgian (http://www.transifex.com/torchbox/wagtail/language/"
 "ka/)\n"
 "MIME-Version: 1.0\n"
@@ -25,11 +25,17 @@ msgstr "სიგანე"
 msgid "Height"
 msgstr "სიმაღლე"
 
+msgid "Add"
+msgstr "დამატება"
+
 msgid "Edit"
 msgstr "რედაქტირება"
 
 msgid "Search"
 msgstr "ძიება"
+
+msgid "New"
+msgstr "ახალი"
 
 msgid "Choose a format"
 msgstr "ფორმატის არჩევა"
@@ -61,15 +67,20 @@ msgstr "ტიპი"
 msgid "Status"
 msgstr "სტატუსი"
 
+msgid "Edit this page"
+msgstr "ამ გვერდის რედაქტირება"
+
 msgid "Add images"
 msgstr "გამოსახულებების დამატება"
 
 msgid "Delete"
 msgstr "წაშლა"
 
+#, python-brace-format
 msgid "Image '{0}' deleted."
 msgstr "გამოსახულება '{0}' წაშლილია."
 
+#, python-brace-format
 msgid "Image '{0}' added."
 msgstr "გამოსახულება '{0}' დამატებულია."
 

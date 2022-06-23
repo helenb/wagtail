@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Dino Aljević <dino8890@protonmail.com>, 2020
+# Dino Aljević <dino8890@protonmail.com>, 2020-2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-10-28 09:43+0000\n"
-"Last-Translator: Dino Aljević <dino8890@protonmail.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:06+0000\n"
+"Last-Translator: Dino Aljević <dino8890@protonmail.com>, 2020-2022\n"
 "Language-Team: Croatian (Croatia) (http://www.transifex.com/torchbox/wagtail/"
 "language/hr_HR/)\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr ""
 msgid "Wagtail documents"
 msgstr "Wagtail dokumenti"
 
+msgid "Collection"
+msgstr "Zbirka"
+
 msgid "Add"
 msgstr "Dodaj"
 
@@ -34,6 +37,9 @@ msgstr "Uredi"
 
 msgid "Edit any document"
 msgstr "Uređivanje bilo kojeg dokumenta"
+
+msgid "Choose"
+msgstr "Odaberi"
 
 msgid "title"
 msgstr "naslov"
@@ -56,6 +62,25 @@ msgstr "dokument"
 msgid "documents"
 msgstr "dokumenti"
 
+msgid "Yes, add"
+msgstr "Da, dodaj"
+
+msgid "No, don't add"
+msgstr "Ne, nemoj dodati"
+
+#, python-format
+msgid "Used %(usage_count)s time"
+msgid_plural "Used %(usage_count)s times"
+msgstr[0] "Korišteno %(usage_count)s put"
+msgstr[1] "Korišteno %(usage_count)s puta"
+msgstr[2] "Korišteno %(usage_count)s puta"
+
+msgid "Yes, delete"
+msgstr "Da, izbriši"
+
+msgid "No, don't delete"
+msgstr "Ne, nemoj izbrisati"
+
 msgid "Choose a document"
 msgstr "Odaberi dokument"
 
@@ -64,28 +89,6 @@ msgstr "Pretraži"
 
 msgid "Upload"
 msgstr "Prijenos"
-
-msgid "Uploading…"
-msgstr "Prijenos u tijeku..."
-
-#, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-"Pronađen je %(counter)s rezultat"
-msgstr[1] ""
-"\n"
-"Pronađeno je %(counter)s rezultata"
-msgstr[2] ""
-"\n"
-"Pronađeno je %(counter)s rezultata"
 
 msgid "Latest documents"
 msgstr "Najnoviji dokumenti"
@@ -102,16 +105,8 @@ msgstr "Nemate dokumenata u ovoj zbirci."
 msgid "You haven't uploaded any documents."
 msgstr "Nemate dokumenata."
 
-#, python-format
-msgid ""
-"\n"
-"            Why not <a class=\"upload-one-now\" href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?\n"
-"            "
-msgstr ""
-"\n"
-"Zašto ne biste <a class=\"upload-one-now\" href="
-"\"%(wagtaildocs_add_document_url)s\">dodali jedan</a>?"
+msgid "Uploading…"
+msgstr "Prijenos u tijeku..."
 
 msgid "Change document:"
 msgstr "Promijeni dokument:"
@@ -128,22 +123,6 @@ msgstr "Izbriši %(title)s"
 
 msgid "Delete document"
 msgstr "Izbriši dokument"
-
-#, python-format
-msgid "Used %(usage_count)s time"
-msgid_plural "Used %(usage_count)s times"
-msgstr[0] "Korišteno %(usage_count)s put"
-msgstr[1] "Korišteno %(usage_count)s puta"
-msgstr[2] "Korišteno %(usage_count)s puta"
-
-msgid "Are you sure you want to delete this document?"
-msgstr "Jeste li sigurni da želite izbrisati dokument?"
-
-msgid "Yes, delete"
-msgstr "Da, izbriši"
-
-msgid "No, don't delete"
-msgstr "Ne, nemoj izbrisati"
 
 #, python-format
 msgid "Editing %(title)s"
@@ -173,9 +152,6 @@ msgstr "Naslov"
 msgid "File"
 msgstr "Datoteka"
 
-msgid "Collection"
-msgstr "Zbirka"
-
 msgid "Created"
 msgstr "Stvoreno"
 
@@ -188,16 +164,16 @@ msgid ""
 "You haven't uploaded any documents in this collection. Why not <a href="
 "\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Nemate dokumenata u ovoj zbirci. Zašto ne biste <a href="
-"\"%(wagtaildocs_add_document_url)s\">dodali jedan</a>?"
+"Nemate dokumenata u ovoj zbirci. Zašto ne <a href="
+"\"%(wagtaildocs_add_document_url)s\">dodate jedan</a>?"
 
 #, python-format
 msgid ""
 "You haven't uploaded any documents. Why not <a href="
 "\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Nemate dokumenata. Zašto ne biste <a href=\"%(wagtaildocs_add_document_url)s"
-"\">dodali jedan</a>?"
+"Nemate dokumenata. Zašto ne <a href=\"%(wagtaildocs_add_document_url)s"
+"\">dodate jedan</a>?"
 
 #, python-format
 msgid "Usage of %(title)s"
@@ -218,30 +194,6 @@ msgstr "Status"
 msgid "Edit this page"
 msgstr "Uredi ovu stranicu"
 
-#, python-format
-msgid ""
-"\n"
-"        <span>%(total)s</span> Document <span class=\"visuallyhidden"
-"\">created in %(site_name)s</span>\n"
-"    "
-msgid_plural ""
-"\n"
-"        <span>%(total)s</span> Documents <span class=\"visuallyhidden"
-"\">created in %(site_name)s</span>\n"
-"    "
-msgstr[0] ""
-"\n"
-"<span>%(total)s</span> Dokument <span class=\"visuallyhidden\">stvoren u "
-"%(site_name)s</span>"
-msgstr[1] ""
-"\n"
-"<span>%(total)s</span> Dokumenata <span class=\"visuallyhidden\">stvorenih u"
-"%(site_name)s</span>"
-msgstr[2] ""
-"\n"
-"<span>%(total)s</span> Dokumenata <span class=\"visuallyhidden\">stvorenih u "
-"%(site_name)s</span>"
-
 msgid "Add multiple documents"
 msgstr "Dodaj više dokumenata"
 
@@ -249,7 +201,7 @@ msgid "Add documents"
 msgstr "Dodaj dokumente"
 
 msgid "Drag and drop documents into this area to upload immediately."
-msgstr "Dovucite dokumente ovdje kako biste ih prenijeli."
+msgstr "Dovucite dokumente ovdje kako bi ih prenijeli."
 
 msgid "Or choose from your computer"
 msgstr "Ili odaberite sa vašeg računala"
@@ -271,14 +223,8 @@ msgstr "Nažalost, prijenos nije uspio."
 msgid "Document updated."
 msgstr "Dokument je ažuriran."
 
-msgid "Update"
-msgstr "Ažuriraj"
-
-msgid "Delete"
-msgstr "Izbriši"
-
 msgid "You need a password to access this document."
-msgstr "Potrebna je lozinka kako biste pristupili ovom dokumentu."
+msgstr "Potrebna je lozinka kako bi pristupili ovom dokumentu."
 
 msgid "Document permissions"
 msgstr "Dozvole dokumenta"
@@ -286,21 +232,23 @@ msgstr "Dozvole dokumenta"
 msgid "Add a document permission"
 msgstr "Dodaj dozvolu dokumenta"
 
+msgid "Delete"
+msgstr "Izbriši"
+
 msgid "Server Error"
 msgstr "Greška na poslužitelju"
-
-msgid "Report this error to your webmaster with the following information:"
-msgstr "Prijavite ovu grešku vašem webmasteru sa slijedećim informacijama:"
 
 msgid "Search documents"
 msgstr "Pretraži dokumente"
 
+#, python-brace-format
 msgid "Document '{0}' added."
 msgstr "Dokument '{0}' je dodan."
 
 msgid "The document could not be saved due to errors."
 msgstr "Nije moguće sačuvati dokument zbog grešaka."
 
+#, python-brace-format
 msgid "Document '{0}' updated"
 msgstr "Dokument '{0}' je ažuriran"
 
@@ -309,6 +257,7 @@ msgid ""
 msgstr ""
 "Datoteka nije pronađena. Molimo promijenite izvor ili izbrišite dokument."
 
+#, python-brace-format
 msgid "Document '{0}' deleted."
 msgstr "Dokument '{0}' je izbrisan."
 

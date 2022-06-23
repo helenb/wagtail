@@ -6,6 +6,10 @@ import draftail, {
   EmbedBlock,
 } from './index';
 
+window.comments = {
+  getContentPath: jest.fn(),
+};
+
 describe('Draftail', () => {
   describe('#initEditor', () => {
     beforeEach(() => {
@@ -44,9 +48,7 @@ describe('Draftail', () => {
       });
 
       draftail.initEditor('#test', {
-        entityTypes: [
-          { type: 'IMAGE' },
-        ],
+        entityTypes: [{ type: 'IMAGE' }],
         enableHorizontalRule: true,
       });
 
@@ -55,7 +57,8 @@ describe('Draftail', () => {
 
     describe('selector conflicts', () => {
       it('fails to instantiate on the right field', () => {
-        document.body.innerHTML = '<meta name="description" content="null" /><input name="description" value="null" />';
+        document.body.innerHTML =
+          '<meta name="description" content="null" /><input name="description" value="null" />';
 
         expect(() => {
           draftail.initEditor('[name="description"]', {}, document.body);
@@ -74,7 +77,9 @@ describe('Draftail', () => {
 
         draftail.initEditor('#description', {});
 
-        expect(document.querySelector('[name="last"]').draftailEditor).not.toBeDefined();
+        expect(
+          document.querySelector('[name="last"]').draftailEditor,
+        ).not.toBeDefined();
       });
 
       it('has no conflict when currentScript is used', () => {
@@ -87,9 +92,15 @@ describe('Draftail', () => {
           </div>
         `;
 
-        draftail.initEditor('#description', {}, document.querySelector('[data-draftail-script]'));
+        draftail.initEditor(
+          '#description',
+          {},
+          document.querySelector('[data-draftail-script]'),
+        );
 
-        expect(document.querySelector('[name="last"]').draftailEditor).toBeDefined();
+        expect(
+          document.querySelector('[name="last"]').draftailEditor,
+        ).toBeDefined();
       });
 
       it('uses fallback document.body when currentScript context is wrong', () => {
@@ -99,9 +110,15 @@ describe('Draftail', () => {
           <div><script data-draftail-script></script></div>
         `;
 
-        draftail.initEditor('#description', {}, document.querySelector('[data-draftail-script]'));
+        draftail.initEditor(
+          '#description',
+          {},
+          document.querySelector('[data-draftail-script]'),
+        );
 
-        expect(document.querySelector('#description').draftailEditor).toBeDefined();
+        expect(
+          document.querySelector('#description').draftailEditor,
+        ).toBeDefined();
       });
     });
   });
@@ -141,7 +158,9 @@ describe('Draftail', () => {
   it('#ImageBlock', () => expect(ImageBlock).toBeDefined());
   it('#EmbedBlock', () => expect(EmbedBlock).toBeDefined());
 
-  it('#ModalWorkflowSource', () => expect(draftail.ModalWorkflowSource).toBeDefined());
+  it('#ModalWorkflowSource', () =>
+    expect(draftail.ModalWorkflowSource).toBeDefined());
   it('#Tooltip', () => expect(draftail.Tooltip).toBeDefined());
   it('#TooltipEntity', () => expect(draftail.TooltipEntity).toBeDefined());
+  it('#getSplitControl', () => expect(draftail.getSplitControl).toBeDefined());
 });

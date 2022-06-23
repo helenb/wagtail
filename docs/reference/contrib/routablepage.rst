@@ -10,7 +10,7 @@ The ``RoutablePageMixin`` mixin provides a convenient way for a page to respond 
 
 A ``Page`` using ``RoutablePageMixin`` exists within the page tree like any other page, but URL paths underneath it are checked against a list of patterns. If none of the patterns match, control is passed to subpages as usual (or failing that, a 404 error is thrown).
 
-By default a route for ``r'^$'`` exists, which serves the content exactly like a regular ``Page`` would. It can be overridden by using ``@route(r'^$')`` on any other method of the inheriting class.
+By default a route for ``r'^$'`` exists, which serves the content exactly like a normal ``Page`` would. It can be overridden by using ``@route(r'^$')`` on any other method of the inheriting class.
 
 
 Installation
@@ -18,19 +18,19 @@ Installation
 
 Add ``"wagtail.contrib.routable_page"`` to your INSTALLED_APPS:
 
- .. code-block:: python
+.. code-block:: python
 
-     INSTALLED_APPS = [
-        ...
+    INSTALLED_APPS = [
+      ...
 
-        "wagtail.contrib.routable_page",
-     ]
+      "wagtail.contrib.routable_page",
+    ]
 
 
 The basics
 ==========
 
-To use ``RoutablePageMixin``, you need to make your class inherit from both :class:`wagtail.contrib.routable_page.models.RoutablePageMixin` and :class:`wagtail.core.models.Page`, then define some view methods and decorate them with ``wagtail.contrib.routable_page.models.route``. These view methods behave like ordinary Django view functions, and must return an ``HttpResponse`` object; typically this is done through a call to ``django.shortcuts.render``.
+To use ``RoutablePageMixin``, you need to make your class inherit from both :class:`wagtail.contrib.routable_page.models.RoutablePageMixin` and :class:`wagtail.models.Page`, then define some view methods and decorate them with ``wagtail.contrib.routable_page.models.route``. These view methods behave like ordinary Django view functions, and must return an ``HttpResponse`` object; typically this is done through a call to ``django.shortcuts.render``.
 
 Here's an example of an ``EventIndexPage`` with three views, assuming that an ``EventPage`` model with an ``event_date`` field has been defined elsewhere:
 
@@ -38,8 +38,8 @@ Here's an example of an ``EventIndexPage`` with three views, assuming that an ``
 
     import datetime
     from django.http import JsonResponse
-    from wagtail.core.fields import RichTextField
-    from wagtail.core.models import Page
+    from wagtail.fields import RichTextField
+    from wagtail.models import Page
     from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 
 
@@ -141,7 +141,7 @@ Reversing URLs
     >>> event_page.reverse_subpage('events_for_year', args=(2015, ))
     'year/2015/'
 
-This method only returns the part of the URL within the page. To get the full URL, you must append it to the values of either the :attr:`~wagtail.core.models.Page.url` or the :attr:`~wagtail.core.models.Page.full_url` attribute on your page:
+This method only returns the part of the URL within the page. To get the full URL, you must append it to the values of either the :attr:`~wagtail.models.Page.url` or the :attr:`~wagtail.models.Page.full_url` attribute on your page:
 
 .. code-block:: python
 
@@ -158,7 +158,7 @@ The route name defaults to the name of the view. You can override this name with
 
 .. code-block:: python
 
-    from wagtail.core.models import Page
+    from wagtail.models import Page
     from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 
 
@@ -174,7 +174,7 @@ The route name defaults to the name of the view. You can override this name with
 
 .. code-block:: python
 
-    >>> event_page.reverse_subpage('year', args=(2015, ))
+    >>> event_page.url + event_page.reverse_subpage('year', args=(2015, ))
     '/events/year/2015/'
 
 The ``RoutablePageMixin`` class
@@ -183,26 +183,26 @@ The ``RoutablePageMixin`` class
 .. automodule:: wagtail.contrib.routable_page.models
 .. autoclass:: RoutablePageMixin
 
-    .. automethod:: render
+  .. automethod:: render
 
-    .. automethod:: get_subpage_urls
+  .. automethod:: get_subpage_urls
 
-    .. automethod:: resolve_subpage
+  .. automethod:: resolve_subpage
 
-        Example:
+    Example:
 
-        .. code-block:: python
+    .. code-block:: python
 
-            view, args, kwargs = page.resolve_subpage('/past/')
-            response = view(request, *args, **kwargs)
+        view, args, kwargs = page.resolve_subpage('/past/')
+        response = view(request, *args, **kwargs)
 
-    .. automethod:: reverse_subpage
+  .. automethod:: reverse_subpage
 
-        Example:
+    Example:
 
-        .. code-block:: python
+    .. code-block:: python
 
-            url = page.url + page.reverse_subpage('events_for_year', kwargs={'year': '2014'})
+        url = page.url + page.reverse_subpage('events_for_year', kwargs={'year': '2014'})
 
 
  .. _routablepageurl_template_tag:

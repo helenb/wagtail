@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Icon } from 'draftail';
 
+import { SelectionState, EditorState } from 'draft-js';
 import Tooltip from '../Tooltip/Tooltip';
 import Portal from '../../Portal/Portal';
-import { SelectionState, EditorState } from 'draft-js';
 
 // Constraints the maximum size of the tooltip.
 const OPTIONS_MAX_WIDTH = 300;
@@ -63,8 +63,14 @@ class MediaBlock extends Component {
     this.setState({
       showTooltipAt: {
         container: container,
-        top: rect.top - containerRect.top - (document.documentElement.scrollTop || document.body.scrollTop),
-        left: rect.left - containerRect.left - (document.documentElement.scrollLeft || document.body.scrollLeft),
+        top:
+          rect.top -
+          containerRect.top -
+          (document.documentElement.scrollTop || document.body.scrollTop),
+        left:
+          rect.left -
+          containerRect.left -
+          (document.documentElement.scrollLeft || document.body.scrollLeft),
         width: rect.width,
         height: rect.height,
         direction: maxWidth >= TOOLTIP_MAX_WIDTH ? 'left' : 'top-left',

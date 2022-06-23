@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-07-24 16:51+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:04+0000\n"
+"Last-Translator: Peter Coward <peter@catalpa.io>, 2019\n"
 "Language-Team: Tetum (Tetun) (http://www.transifex.com/torchbox/wagtail/"
 "language/tet/)\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgstr ""
 msgid "Wagtail redirects"
 msgstr "Wagtail troka dalan"
 
+msgid "Type"
+msgstr "Tipu"
+
 msgid "From site"
 msgstr "Husi situs"
 
@@ -31,6 +34,10 @@ msgstr "situs sira hotu"
 
 msgid "A redirect with this path already exists."
 msgstr "Troko dalan ho parte ne'ebe mak existi tiha ona"
+
+#, python-format
+msgid "Supported formats: %(supported_formats)s."
+msgstr "Suporta formatu: %(supported_formats)s."
 
 msgid "redirect from"
 msgstr "Troka dalan husi"
@@ -53,6 +60,9 @@ msgstr "Trokda dala ba pajina"
 
 msgid "redirect to any URL"
 msgstr "Troka dalan URL balu"
+
+msgid "created at"
+msgstr "Kria iha"
 
 msgid "temporary"
 msgstr "Temporariu"
@@ -82,6 +92,9 @@ msgstr "Ita serteza hakarak hamos dalan ida ne'e?"
 msgid "Yes, delete"
 msgstr "Loos, hamoos"
 
+msgid "Preview"
+msgstr "Pré-visualizasaun"
+
 #, python-format
 msgid "Editing %(title)s"
 msgstr "Hadia hela %(title)s"
@@ -98,27 +111,14 @@ msgstr "Husi"
 msgid "To"
 msgstr "Ba "
 
+msgid "Continue"
+msgstr "Kontinua"
+
 msgid "Site"
 msgstr "situs"
 
-msgid "Type"
-msgstr "Tipu"
-
 msgid "Edit this redirect"
 msgstr "Hadia dalan ida ne'e"
-
-#, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-"Iha %(counter)s resultadu hanesan"
 
 #, python-format
 msgid "Sorry, no redirects match \"<em>%(query_string)s</em>\""
@@ -135,6 +135,7 @@ msgstr ""
 msgid "Search redirects"
 msgstr "Buka troka dalan"
 
+#, python-brace-format
 msgid "Redirect '{0}' updated."
 msgstr "Troka dalan  '{0}' Atualiza ona"
 
@@ -144,9 +145,11 @@ msgstr "hadia"
 msgid "The redirect could not be saved due to errors."
 msgstr "Buka troka dalan labele labele rai tamba erru sira."
 
+#, python-brace-format
 msgid "Redirect '{0}' deleted."
 msgstr "Troka dalan '{0}' hamos ona."
 
+#, python-brace-format
 msgid "Redirect '{0}' added."
 msgstr "Troka dalan '{0}' hatama ona."
 

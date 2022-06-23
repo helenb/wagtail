@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-01-20 20:14+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:05+0000\n"
+"Last-Translator: Peter Coward <peter@catalpa.io>, 2019\n"
 "Language-Team: Tetum (Tetun) (http://www.transifex.com/torchbox/wagtail/"
 "language/tet/)\n"
 "MIME-Version: 1.0\n"
@@ -67,6 +67,12 @@ msgstr " Alinha-karuk"
 msgid "Right-aligned"
 msgstr " Alinha-Loos"
 
+msgid "Collection"
+msgstr "Kolleksaun"
+
+msgid "Alt text"
+msgstr "Alt testu"
+
 msgid "Filter"
 msgstr " Filtru"
 
@@ -109,6 +115,9 @@ msgstr "Hadia"
 msgid "Edit any image"
 msgstr "Hadia imagen ruma"
 
+msgid "Choose"
+msgstr "Hili"
+
 msgid "title"
 msgstr "titlu"
 
@@ -136,11 +145,32 @@ msgstr "imagen"
 msgid "images"
 msgstr "imagen sira"
 
+msgid "Yes, delete"
+msgstr "Loos, hamoos"
+
+msgid "No, don't delete"
+msgstr "Lae, Labele hamoos"
+
 msgid "Choose an image"
 msgstr "Hili imagen ida"
 
 msgid "Search"
 msgstr "Buka"
+
+msgid "New"
+msgstr "foun"
+
+msgid "Save"
+msgstr "Rai"
+
+msgid "Delete image"
+msgstr "Hamoos imagen"
+
+msgid "Editing"
+msgstr "Hadia hela"
+
+msgid "Usage"
+msgstr "Uza"
 
 #, python-format
 msgid ""
@@ -159,17 +189,39 @@ msgstr "URL"
 msgid "Preview"
 msgstr "Pré-visualizasaun"
 
-msgid "Update"
-msgstr "Troka"
+#, python-format
+msgid "Usage of %(title)s"
+msgstr "%(title)s uza iha nee"
 
-msgid "Delete"
-msgstr "hamoos"
+msgid "Usage of"
+msgstr "uza iha nee"
+
+msgid "Title"
+msgstr "Titlu"
+
+msgid "Parent"
+msgstr "inan-aman"
+
+msgid "Type"
+msgstr "Tipu"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Edit this page"
+msgstr "Hadia pajina nee"
+
+msgid "Server Error"
+msgstr "Servidor erru"
 
 msgid "Image permissions"
 msgstr "Permisaun imajen"
 
 msgid "Add an image permission"
 msgstr "Hatama permisaun imajen"
+
+msgid "Delete"
+msgstr "hamoos"
 
 msgid "Search images"
 msgstr "Buka imajen"
@@ -187,9 +239,11 @@ msgstr ""
 "Fonte  dokumentus imajen lahetan. Favor troka nia fonte ou hamoos imajen "
 "ne'e."
 
+#, python-brace-format
 msgid "Image '{0}' deleted."
 msgstr "Imajen '{0}' hamoos ona."
 
+#, python-brace-format
 msgid "Image '{0}' added."
 msgstr "Imajen '{0}' hatama ona"
 

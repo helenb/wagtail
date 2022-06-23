@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-07-24 16:51+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:04+0000\n"
+"Last-Translator: abdulaziz alfuhigi <abajall@gmail.com>, 2018\n"
 "Language-Team: Arabic (http://www.transifex.com/torchbox/wagtail/language/"
 "ar/)\n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,12 @@ msgstr ""
 msgid "Wagtail redirects"
 msgstr "Wagtail اعادات توجية"
 
+msgid "Type"
+msgstr "نوع"
+
+msgid "Permanent"
+msgstr "دتئم"
+
 msgid "From site"
 msgstr "من الموقع"
 
@@ -35,6 +41,10 @@ msgstr "كل المواقع"
 
 msgid "A redirect with this path already exists."
 msgstr "يوجد بالفعل إعادة توجيه مع هذا المسار."
+
+#, python-format
+msgid "Supported formats: %(supported_formats)s."
+msgstr "الصيغ المدعومة:%(supported_formats)s."
 
 msgid "redirect from"
 msgstr "إعادة توجيه من"
@@ -57,6 +67,9 @@ msgstr "إعادة توجيه إلى صفحة"
 
 msgid "redirect to any URL"
 msgstr "إعادة التوجيه إلى أي عنوان"
+
+msgid "created at"
+msgstr "أنشئت في"
 
 msgid "temporary"
 msgstr "مؤقت"
@@ -86,6 +99,9 @@ msgstr "هل أنت متأكد من أنك تريد حذف إعادة التوج
 msgid "Yes, delete"
 msgstr "نعم احذف"
 
+msgid "Preview"
+msgstr "نظر مقدم"
+
 #, python-format
 msgid "Editing %(title)s"
 msgstr "يتم تحرير %(title)s"
@@ -102,11 +118,11 @@ msgstr "من"
 msgid "To"
 msgstr "إلى"
 
+msgid "Continue"
+msgstr "أكمل"
+
 msgid "Site"
 msgstr "موقع"
-
-msgid "Type"
-msgstr "نوع"
 
 msgid "Edit this redirect"
 msgstr "تحرير إعادة التوجيه"
@@ -126,6 +142,7 @@ msgstr ""
 msgid "Search redirects"
 msgstr "ابحث تغييرات الاتجاه"
 
+#, python-brace-format
 msgid "Redirect '{0}' updated."
 msgstr "جددت عملية تغيير الاتجاه {0}"
 
@@ -135,9 +152,11 @@ msgstr "تحرير"
 msgid "The redirect could not be saved due to errors."
 msgstr "لا يمكن حفظ إعادة التوجيه بسبب الأخطاء."
 
+#, python-brace-format
 msgid "Redirect '{0}' deleted."
 msgstr "إعادة توجيه '{0}' محذوف."
 
+#, python-brace-format
 msgid "Redirect '{0}' added."
 msgstr "تمت إعادة توجيه '{0}'."
 

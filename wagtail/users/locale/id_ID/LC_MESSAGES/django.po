@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-07-24 16:51+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-19 11:54+0000\n"
+"Last-Translator: atmosuwiryo <suwiryo.atmo@gmail.com>, 2019\n"
 "Language-Team: Indonesian (Indonesia) (http://www.transifex.com/torchbox/"
 "wagtail/language/id_ID/)\n"
 "MIME-Version: 1.0\n"
@@ -73,15 +73,6 @@ msgid "You cannot have multiple permission records for the same page."
 msgstr ""
 "Anda tidak dapat memiliki beberapa catatan izin untuk halaman yang sama."
 
-msgid "Preferred language"
-msgstr "Bahasa pilihan"
-
-msgid "Current time zone"
-msgstr "Zona waktu saat ini"
-
-msgid "Upload a profile picture"
-msgstr "Unggah gambar profil"
-
 msgid "submitted notifications"
 msgstr "notifikasi terkirim"
 
@@ -118,23 +109,14 @@ msgstr "gambar profil"
 msgid "user profile"
 msgstr "profil pengguna"
 
+msgid "Delete"
+msgstr "Hapus"
+
+msgid "Yes, delete"
+msgstr "Ya, hapus"
+
 msgid "Delete group"
 msgstr "Hapus grup"
-
-#, python-format
-msgid ""
-"\n"
-"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
-"strong> member.\n"
-"            "
-msgid_plural ""
-"\n"
-"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
-"strong> members.\n"
-"            "
-msgstr[0] ""
-"\n"
-"Grup '%(group_name)s' memiliki <strong>%(group_user_count)s</strong> member."
 
 msgid ""
 "Deleting this group will revoke this group's permissions from all member "
@@ -144,9 +126,6 @@ msgstr ""
 
 msgid "Are you sure you want to delete this group?"
 msgstr "Apakah Anda yakin ingin menghapus grup ini?"
-
-msgid "Yes, delete"
-msgstr "Ya, hapus"
 
 msgid "Add group"
 msgstr "Tambah grup"
@@ -169,9 +148,6 @@ msgstr "Tambah"
 msgid "Change"
 msgstr "Ubah"
 
-msgid "Delete"
-msgstr "Hapus"
-
 msgid "Other permissions"
 msgstr "Izin lain-lain"
 
@@ -183,12 +159,6 @@ msgstr "Halaman"
 
 msgid "Add a page permission"
 msgstr "Tambah izin halaman"
-
-msgid "groups"
-msgstr "grup"
-
-msgid "Add a group"
-msgstr "Tambah grup"
 
 #, python-format
 msgid "Sorry, no groups match \"%(query)s\""
@@ -246,19 +216,6 @@ msgid "%(time_period)s ago"
 msgstr "%(time_period)s yang lalu"
 
 #, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-"Ada %(counter)s yang sesuai"
-
-#, python-format
 msgid "Sorry, no users match \"<em>%(query_string)s</em>\""
 msgstr ""
 "Maaf, tidak ada pengguna yang sesuai dengan \"<em>%(query_string)s</em>\""
@@ -266,24 +223,31 @@ msgstr ""
 msgid "Groups"
 msgstr "Grup"
 
+msgid "Add a group"
+msgstr "Tambah grup"
+
 msgid "Search groups"
 msgstr "Pencarian Grup"
 
+#, python-brace-format
 msgid "Group '{0}' created."
 msgstr "Grup '{0}' dibuat."
 
+#, python-brace-format
 msgid "Group '{0}' updated."
 msgstr "Grup '{0}' diperbarui."
 
 msgid "The group could not be saved due to errors."
 msgstr "Grup tidak dapat disimpan karena suatu kesalahan."
 
+#, python-brace-format
 msgid "Group '{0}' deleted."
 msgstr "Grup '{0}' dihapus."
 
 msgid "Search users"
 msgstr "Pencarian pengguna"
 
+#, python-brace-format
 msgid "User '{0}' created."
 msgstr "Pengguna '{0}' dibuat."
 
@@ -293,12 +257,14 @@ msgstr "Ubah"
 msgid "The user could not be created due to errors."
 msgstr "Pengguna tidak dapat dibuat karena suatu kesalahan."
 
+#, python-brace-format
 msgid "User '{0}' updated."
 msgstr "Pengguna '{0}' berhasil diperbaharui."
 
 msgid "The user could not be saved due to errors."
 msgstr "Pengguna tidak dapat disimpan karena suatu kesalahan."
 
+#, python-brace-format
 msgid "User '{0}' deleted."
 msgstr "Pengguna '{0}' dihapus."
 

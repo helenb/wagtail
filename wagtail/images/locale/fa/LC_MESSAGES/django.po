@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-01-20 20:14+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:05+0000\n"
+"Last-Translator: pyzenberg <pyzenberg@gmail.com>, 2017\n"
 "Language-Team: Persian (http://www.transifex.com/torchbox/wagtail/language/"
 "fa/)\n"
 "MIME-Version: 1.0\n"
@@ -58,6 +58,12 @@ msgstr "چپ چین"
 msgid "Right-aligned"
 msgstr "راست چین"
 
+msgid "Collection"
+msgstr "مجموعه"
+
+msgid "Alt text"
+msgstr "متن جایگزین"
+
 msgid "Filter"
 msgstr "صافی"
 
@@ -100,6 +106,9 @@ msgstr "ویرایش"
 msgid "Edit any image"
 msgstr "ویرایش هرنوع تصویری"
 
+msgid "Choose"
+msgstr "انتخاب کنید"
+
 msgid "title"
 msgstr "عنوان"
 
@@ -121,6 +130,12 @@ msgstr "آپلود‌شده توسط کاربر"
 msgid "tags"
 msgstr "برچسب‌ها"
 
+msgid "image"
+msgstr "تصویر"
+
+msgid "Yes, delete"
+msgstr "بله حذف شود"
+
 msgid "Choose an image"
 msgstr "تصویر را انتخاب کنید"
 
@@ -133,8 +148,8 @@ msgstr "آپلود"
 msgid "Popular tags"
 msgstr "برچسب های پرتکرار"
 
-msgid "Uploading…"
-msgstr "در حال آپلود…"
+msgid "New"
+msgstr "جدید"
 
 msgid "Latest images"
 msgstr "آخرین تصاویر"
@@ -144,6 +159,9 @@ msgstr "انتخاب یک فورمت"
 
 msgid "Insert image"
 msgstr "درج تصویر"
+
+msgid "Uploading…"
+msgstr "در حال آپلود…"
 
 msgid "Change image file:"
 msgstr "تغییر فایل تصویر:"
@@ -159,12 +177,6 @@ msgstr "ذخیره"
 
 msgid "Delete image"
 msgstr "حذف تصویر"
-
-msgid "Are you sure you want to delete this image?"
-msgstr "آیا میخواهید این تصویر را حذف کنید؟"
-
-msgid "Yes, delete"
-msgstr "بله حذف شود"
 
 #, python-format
 msgid "Editing image %(title)s"
@@ -193,6 +205,9 @@ msgstr "فایل پیدا نشد"
 
 msgid "Images"
 msgstr "عکس‌ها"
+
+msgid "Clear choice"
+msgstr "پاک کردن انتخاب"
 
 #, python-format
 msgid "Sorry, no images match \"<em>%(query_string)s</em>\""
@@ -281,17 +296,8 @@ msgstr "متاسفانه آپلود ناموفق بود."
 msgid "Server Error"
 msgstr "خطای سرور"
 
-msgid "Report this error to your webmaster with the following information:"
-msgstr "گزارش این خطا به وبمستر با اطلاعات زیر:"
-
 msgid "Image updated."
 msgstr "تصویر آپلود شد."
-
-msgid "Update"
-msgstr "بروزرسانی"
-
-msgid "Delete"
-msgstr "حذف"
 
 msgid "Image permissions"
 msgstr "مجوزهای تصویر"
@@ -299,9 +305,13 @@ msgstr "مجوزهای تصویر"
 msgid "Add an image permission"
 msgstr "افزودن مجوز تصویر"
 
+msgid "Delete"
+msgstr "حذف"
+
 msgid "Search images"
 msgstr "جستجوی تصاویر"
 
+#, python-brace-format
 msgid "Image '{0}' updated."
 msgstr "تصویر '{0}' بروزرسانی شد."
 
@@ -316,9 +326,11 @@ msgid ""
 "the image."
 msgstr "تصویر منبع پیدا نشد. لطفا منبع را تغییر دهید یا تصویر را حذف نمایید."
 
+#, python-brace-format
 msgid "Image '{0}' deleted."
 msgstr "تصویر '{0}' حذف شد."
 
+#, python-brace-format
 msgid "Image '{0}' added."
 msgstr "تصویر '{0}' اضافه شد."
 
@@ -330,6 +342,9 @@ msgid "%(count)s image"
 msgid_plural "%(count)s images"
 msgstr[0] "%(count)s تصویر"
 msgstr[1] "%(count)s تصویر"
+
+msgid "Change image"
+msgstr "تغییر تصویر"
 
 msgid "Edit this image"
 msgstr "ویرایش این تصویر"

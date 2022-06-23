@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-10-23 11:36+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:06+0000\n"
+"Last-Translator: Py Data Geek <pydatageek@gmail.com>, 2019\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/torchbox/wagtail/"
 "language/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,9 @@ msgstr ""
 
 msgid "Wagtail documents"
 msgstr "Wagtail belgeler"
+
+msgid "Collection"
+msgstr "Koleksiyon"
 
 msgid "Add"
 msgstr "Ekle"
@@ -36,6 +39,9 @@ msgstr "Düzenle"
 
 msgid "Edit any document"
 msgstr "Herhangi bir belge düzenle"
+
+msgid "Choose"
+msgstr "Seç"
 
 msgid "title"
 msgstr "başla"
@@ -58,6 +64,18 @@ msgstr "belge"
 msgid "documents"
 msgstr "belgeler"
 
+#, python-format
+msgid "Used %(usage_count)s time"
+msgid_plural "Used %(usage_count)s times"
+msgstr[0] "%(usage_count)s kez kullanıldı"
+msgstr[1] "%(usage_count)s kez kullanıldı"
+
+msgid "Yes, delete"
+msgstr "Evet, sil"
+
+msgid "No, don't delete"
+msgstr "Hayır, silme"
+
 msgid "Choose a document"
 msgstr "Belge seç"
 
@@ -66,27 +84,6 @@ msgstr "Ara"
 
 msgid "Upload"
 msgstr "Yükle"
-
-msgid "Uploading…"
-msgstr "Yükleniyor…"
-
-#, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-"            %(counter)s eşleşme bulundu\n"
-"        "
-msgstr[1] ""
-"\n"
-"            %(counter)s eşleşme bulundu\n"
-"        "
 
 msgid "Latest documents"
 msgstr "En yeni belgeler"
@@ -101,17 +98,8 @@ msgstr "Bu koleksiyone henüz belge yüklemediniz."
 msgid "You haven't uploaded any documents."
 msgstr "Hiç belge yüklemediniz."
 
-#, python-format
-msgid ""
-"\n"
-"            Why not <a class=\"upload-one-now\" href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?\n"
-"            "
-msgstr ""
-"\n"
-"            Neden <a class=\"upload-one-now\" href="
-"\"%(wagtaildocs_add_document_url)s\">bir tane eklemiyorsunuz</a>?\n"
-"            "
+msgid "Uploading…"
+msgstr "Yükleniyor…"
 
 msgid "Change document:"
 msgstr "Belgeyi değiştir:"
@@ -128,21 +116,6 @@ msgstr "%(title)s sil"
 
 msgid "Delete document"
 msgstr "Belge sil"
-
-#, python-format
-msgid "Used %(usage_count)s time"
-msgid_plural "Used %(usage_count)s times"
-msgstr[0] "%(usage_count)s kez kullanıldı"
-msgstr[1] "%(usage_count)s kez kullanıldı"
-
-msgid "Are you sure you want to delete this document?"
-msgstr "Belgeyi silmek istediğinizden emin misiniz?"
-
-msgid "Yes, delete"
-msgstr "Evet, sil"
-
-msgid "No, don't delete"
-msgstr "Hayır, silme"
 
 #, python-format
 msgid "Editing %(title)s"
@@ -171,9 +144,6 @@ msgstr "Başlık"
 
 msgid "File"
 msgstr "Dosya"
-
-msgid "Collection"
-msgstr "Koleksiyon"
 
 #, python-format
 msgid "%(time_period)s ago"
@@ -214,28 +184,6 @@ msgstr "Durum"
 msgid "Edit this page"
 msgstr "Sayfayı düzenle"
 
-#, python-format
-msgid ""
-"\n"
-"        <span>%(total)s</span> Document <span class=\"visuallyhidden"
-"\">created in %(site_name)s</span>\n"
-"    "
-msgid_plural ""
-"\n"
-"        <span>%(total)s</span> Documents <span class=\"visuallyhidden"
-"\">created in %(site_name)s</span>\n"
-"    "
-msgstr[0] ""
-"\n"
-"        <span>%(total)s</span> Belge <span class=\"visuallyhidden\">"
-"%(site_name)s</span> içinde oluşturuldu\n"
-"    "
-msgstr[1] ""
-"\n"
-"        <span>%(total)s</span> Belge <span class=\"visuallyhidden\">"
-"%(site_name)s</span> içinde oluşturuldu\n"
-"    "
-
 msgid "Add multiple documents"
 msgstr "Birden fazla belge akle"
 
@@ -262,12 +210,6 @@ msgstr ""
 msgid "Sorry, upload failed."
 msgstr "Üzgünüm, yükleme başarısız oldu."
 
-msgid "Update"
-msgstr "Güncelle"
-
-msgid "Delete"
-msgstr "Sil"
-
 msgid "You need a password to access this document."
 msgstr "Bu belgeye erişebilmeniz için şifre gerekiyor."
 
@@ -277,21 +219,23 @@ msgstr "Belge izinleri"
 msgid "Add a document permission"
 msgstr "Bir belge izni ekle"
 
+msgid "Delete"
+msgstr "Sil"
+
 msgid "Server Error"
 msgstr "Sunucu Hatası"
-
-msgid "Report this error to your webmaster with the following information:"
-msgstr "Bu hatayı site yöneticinize, şu bilgiyle bildirin:"
 
 msgid "Search documents"
 msgstr "Belgelerde ara"
 
+#, python-brace-format
 msgid "Document '{0}' added."
 msgstr "'{0}' belgesi eklendi."
 
 msgid "The document could not be saved due to errors."
 msgstr "Hata nediyle belge kaydedilemedi."
 
+#, python-brace-format
 msgid "Document '{0}' updated"
 msgstr "'{0}' belgesi güncellendi"
 
@@ -299,6 +243,7 @@ msgid ""
 "The file could not be found. Please change the source or delete the document"
 msgstr "Belge bulunamıyor. Lütfen kaynağı değiştirin ya da belgeyi silin"
 
+#, python-brace-format
 msgid "Document '{0}' deleted."
 msgstr "'{0}' belgesi silindi."
 

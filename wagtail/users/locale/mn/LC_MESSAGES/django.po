@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-07-24 16:51+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-19 11:54+0000\n"
+"Last-Translator: Myagmarjav Enkhbileg <miigaa.lucky@gmail.com>, 2019\n"
 "Language-Team: Mongolian (http://www.transifex.com/torchbox/wagtail/language/"
 "mn/)\n"
 "MIME-Version: 1.0\n"
@@ -70,15 +70,6 @@ msgstr "Ийм нэртэй бүлэг өмнө нь оруулсан байна
 msgid "You cannot have multiple permission records for the same page."
 msgstr "Нэг хуудсанд олон хандалтын эрхийн бичлэг тохируулах боломжгүй."
 
-msgid "Preferred language"
-msgstr "Сонгосон хэл"
-
-msgid "Current time zone"
-msgstr "Одоогийн цагийн бүс"
-
-msgid "Upload a profile picture"
-msgstr "Профайл зураг оруулах"
-
 msgid "submitted notifications"
 msgstr "илгээсэн мэдэгдлүүд"
 
@@ -118,30 +109,14 @@ msgstr "хэрэглэгчийн профайл"
 msgid "user profiles"
 msgstr "хэрэглэгчийн профайлууд"
 
+msgid "Delete"
+msgstr "Устгах"
+
+msgid "Yes, delete"
+msgstr "Тийм, устга"
+
 msgid "Delete group"
 msgstr "Бүлэг устгах"
-
-#, python-format
-msgid ""
-"\n"
-"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
-"strong> member.\n"
-"            "
-msgid_plural ""
-"\n"
-"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
-"strong> members.\n"
-"            "
-msgstr[0] ""
-"\n"
-"                '%(group_name)s' бүлэг <strong>%(group_user_count)s</strong> "
-"гишүүнтэй.\n"
-"            "
-msgstr[1] ""
-"\n"
-"                 '%(group_name)s' бүлэг <strong>%(group_user_count)s</"
-"strong> гишүүнтэй.\n"
-"            "
 
 msgid ""
 "Deleting this group will revoke this group's permissions from all member "
@@ -152,9 +127,6 @@ msgstr ""
 
 msgid "Are you sure you want to delete this group?"
 msgstr "Энэ бүлгийг үнэхээр устгах уу?"
-
-msgid "Yes, delete"
-msgstr "Тийм, устга"
 
 msgid "Add group"
 msgstr "Бүлэг нэмэх"
@@ -177,9 +149,6 @@ msgstr "Нэмэх"
 msgid "Change"
 msgstr "Солих"
 
-msgid "Delete"
-msgstr "Устгах"
-
 msgid "Other permissions"
 msgstr "Бусад эрхүүд"
 
@@ -191,12 +160,6 @@ msgstr "Хуудас"
 
 msgid "Add a page permission"
 msgstr "Хуудсын эрх нэмэх"
-
-msgid "groups"
-msgstr "бүлгүүд"
-
-msgid "Add a group"
-msgstr "Бүлэг нэмэх"
 
 #, python-format
 msgid "Sorry, no groups match \"%(query)s\""
@@ -257,48 +220,37 @@ msgid "%(time_period)s ago"
 msgstr "%(time_period)s-н өмнө"
 
 #, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-"            %(counter)s илэрц олдлоо\n"
-"        "
-msgstr[1] ""
-"\n"
-"            %(counter)s илэрц олдлоо\n"
-"        "
-
-#, python-format
 msgid "Sorry, no users match \"<em>%(query_string)s</em>\""
 msgstr "Уучлаарай \"<em>%(query_string)s</em>\" хайлтаар хэрэглэгч олдсонгүй."
 
 msgid "Groups"
 msgstr "Бүлгүүд"
 
+msgid "Add a group"
+msgstr "Бүлэг нэмэх"
+
 msgid "Search groups"
 msgstr "Бүлэг хайх"
 
+#, python-brace-format
 msgid "Group '{0}' created."
 msgstr "'{0}' бүлэг үүслээ."
 
+#, python-brace-format
 msgid "Group '{0}' updated."
 msgstr "'{0}' бүлэг шинэчлэгдлээ."
 
 msgid "The group could not be saved due to errors."
 msgstr "Дараах алдаануудаас болж бүлэг хадгалагдсангүй."
 
+#, python-brace-format
 msgid "Group '{0}' deleted."
 msgstr "'{0}' бүлэг устгагдлаа."
 
 msgid "Search users"
 msgstr "Хэрэглэгч хайх"
 
+#, python-brace-format
 msgid "User '{0}' created."
 msgstr "'{0}' хэрэглэгч үүслээ."
 
@@ -308,12 +260,14 @@ msgstr "Засах"
 msgid "The user could not be created due to errors."
 msgstr "Дараах алдаанаас болж хэрэглэгч үүссэнгүй."
 
+#, python-brace-format
 msgid "User '{0}' updated."
 msgstr "'{0}' хэрэглэгч шинэчлэгдлээ."
 
 msgid "The user could not be saved due to errors."
 msgstr "Дараах алдаануудаас болж хэрэглэгч хадгалагдсангүй."
 
+#, python-brace-format
 msgid "User '{0}' deleted."
 msgstr "'{0}' хэрэглэгч устгагдлаа."
 

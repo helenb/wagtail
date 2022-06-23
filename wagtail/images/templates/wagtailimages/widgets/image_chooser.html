@@ -1,11 +1,10 @@
 {% extends "wagtailadmin/widgets/chooser.html" %}
-{% load wagtailimages_tags %}
 
-{% block chooser_class %}image-chooser{% endblock %}
-{% block chooser_attributes %}data-chooser-url="{% url "wagtailimages:chooser" %}"{% endblock %}
+{# Image chooser doesn't have a chosen icon. It shows an preview of the chosen image instead. #}
+{% block chosen_icon %}{% endblock chosen_icon %}
 
 {% block chosen_state_view %}
     <div class="preview-image">
-        <img alt="{{ title }}" class="show-transparency" height="{{ preview.height }}" src="{{ preview.url }}" title="{{ title }}" width="{{ preview.width }}">
+        <img alt="{{ display_title }}" class="show-transparency" height="{{ preview.height }}" src="{{ preview.url }}" title="{{ display_title }}" width="{{ preview.width }}">
     </div>
 {% endblock %}

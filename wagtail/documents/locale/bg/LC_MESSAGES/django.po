@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-10-23 11:36+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:06+0000\n"
+"Last-Translator: Lyuboslav  Petrov <petrov.lyuboslav@gmail.com>, 2014\n"
 "Language-Team: Bulgarian (http://www.transifex.com/torchbox/wagtail/language/"
 "bg/)\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Edit"
+msgstr "Редакция"
+
+msgid "Choose"
+msgstr "Избери"
+
+msgid "Yes, delete"
+msgstr "Да, изтрий го"
 
 msgid "Choose a document"
 msgstr "Изберете документ"
@@ -51,12 +60,6 @@ msgstr "Изтрийте %(title)s"
 msgid "Delete document"
 msgstr "Изтрий документ"
 
-msgid "Are you sure you want to delete this document?"
-msgstr "Сигурен ли сте, че искате да изтриете документа?"
-
-msgid "Yes, delete"
-msgstr "Да, изтрий го"
-
 #, python-format
 msgid "Editing %(title)s"
 msgstr "Редакция на %(title)s"
@@ -84,15 +87,33 @@ msgstr ""
 "Не сте качили никакви документи. Защо не <a href="
 "\"%(wagtaildocs_add_document_url)s\">качите един сега</a>?"
 
+msgid "Parent"
+msgstr "Родител"
+
+msgid "Type"
+msgstr "Вид"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Edit this page"
+msgstr "Редактирайте тази страница"
+
+msgid "Delete"
+msgstr "Изтрий"
+
+#, python-brace-format
 msgid "Document '{0}' added."
 msgstr "Документ '{0}' добавен."
 
 msgid "The document could not be saved due to errors."
 msgstr "Документа не бе запазен поради грешки."
 
+#, python-brace-format
 msgid "Document '{0}' updated"
 msgstr "Документа '{0}' е обновен."
 
+#, python-brace-format
 msgid "Document '{0}' deleted."
 msgstr "Документа '{0}' е изтрит."
 

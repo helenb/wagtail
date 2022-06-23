@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2021-01-14 01:57+0000\n"
-"Last-Translator: Awatea Randall <awatea@octave.nz>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-20 21:05+0000\n"
+"Last-Translator: Awatea Randall <awatea@octave.nz>, 2021\n"
 "Language-Team: Maori (http://www.transifex.com/torchbox/wagtail/language/"
 "mi/)\n"
 "MIME-Version: 1.0\n"
@@ -68,6 +68,12 @@ msgstr "Tīaroaro-mauī"
 msgid "Right-aligned"
 msgstr "Tīaroaro-matau"
 
+msgid "Collection"
+msgstr "Kohikohinga"
+
+msgid "Alt text"
+msgstr "Manohi kuputuhi"
+
 msgid "Filter"
 msgstr "Tātari"
 
@@ -110,6 +116,9 @@ msgstr "Whakarerekē"
 msgid "Edit any image"
 msgstr "Whakarerekē ngā whakaahua"
 
+msgid "Choose"
+msgstr "Kōhiti"
+
 msgid "title"
 msgstr "taitara"
 
@@ -137,6 +146,12 @@ msgstr "whakaahua"
 msgid "images"
 msgstr "Ngā whakaahua"
 
+msgid "Yes, delete"
+msgstr "Ae, muku"
+
+msgid "No, don't delete"
+msgstr "Kao, kaua e muku"
+
 msgid "Choose an image"
 msgstr "Kōhiti he whakaahua"
 
@@ -149,8 +164,8 @@ msgstr "Tukuatu"
 msgid "Popular tags"
 msgstr "Ngā pinetohu rongonui"
 
-msgid "Uploading…"
-msgstr "Tukuna atu..."
+msgid "New"
+msgstr "Hou"
 
 msgid "Latest images"
 msgstr "Ngā whakaahua hou"
@@ -160,6 +175,9 @@ msgstr "Kōhiti he hōputu"
 
 msgid "Insert image"
 msgstr "Komotanga he whakaahua"
+
+msgid "Uploading…"
+msgstr "Tukuna atu..."
 
 msgid "Change image file:"
 msgstr "Panoni te kōnae whakaahua"
@@ -171,7 +189,10 @@ msgid "Add image"
 msgstr "Tāpiri whakaahua"
 
 msgid "Save"
-msgstr "Pupuritia"
+msgstr "Puritia"
+
+msgid "Delete image"
+msgstr "Muku whakaahua"
 
 #, python-format
 msgid "Editing image %(title)s"
@@ -179,3 +200,79 @@ msgstr "E whakarerekē ana a whakahua %(title)s"
 
 msgid "Editing"
 msgstr "Whakarerekē"
+
+msgid "Filesize"
+msgstr "Kōnae korahi"
+
+msgid "File not found"
+msgstr "Ehara i kimi te kōnae"
+
+msgid "Usage"
+msgstr "Whakamahi"
+
+msgid "Images"
+msgstr "Ngā whakaahua"
+
+msgid "Clear choice"
+msgstr "Kōwhiri whakapara"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Preview"
+msgstr "Titiro"
+
+#, python-format
+msgid "Usage of %(title)s"
+msgstr "Te whakamahi ō %(title)s"
+
+msgid "Usage of"
+msgstr "Te whakamahi ō "
+
+msgid "Title"
+msgstr "Taitara"
+
+msgid "Parent"
+msgstr "Mātua"
+
+msgid "Type"
+msgstr "Momo"
+
+msgid "Status"
+msgstr "Tūnga"
+
+msgid "Edit this page"
+msgstr "Whakarerekē i tēnei whārangi"
+
+msgid "Or choose from your computer"
+msgstr "Kōhiti nō tō rorohiko rānei"
+
+msgid "Add to collection:"
+msgstr "Tāpiri ki te kohikohinga:"
+
+msgid "Sorry, upload failed."
+msgstr "Aroha mai, kua rahua te tukuatu."
+
+msgid "Server Error"
+msgstr "Hapa rorohiko"
+
+msgid "Delete"
+msgstr "Muku"
+
+#, python-brace-format
+msgid "Image '{0}' updated."
+msgstr "Whakahua '{0}' kua whakahou"
+
+msgid "The image could not be saved due to errors."
+msgstr "Ehara ka taea te puritia kī te whakahua nei, he raruraru "
+
+#, python-brace-format
+msgid "Image '{0}' deleted."
+msgstr "Whakahua '{0}' kua mukuhia."
+
+#, python-brace-format
+msgid "Image '{0}' added."
+msgstr "Whakahua '{0}' kua tāpiri."
+
+msgid "The image could not be created due to errors."
+msgstr "Ehara ka taea ki te hangaia te whakahua nei, he raruraru "

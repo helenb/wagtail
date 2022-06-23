@@ -1,33 +1,34 @@
 """Handles rendering of the list of actions in the footer of the snippet create/edit views."""
-
 from functools import lru_cache
 
 from django.contrib.admin.utils import quote
-from django.forms import Media, MediaDefiningClass
+from django.forms import Media
 from django.template.loader import render_to_string
 from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
-from wagtail.core import hooks
+from wagtail import hooks
+from wagtail.admin.ui.components import Component
 from wagtail.snippets.permissions import get_permission_name
 
 
-class ActionMenuItem(metaclass=MediaDefiningClass):
+class ActionMenuItem(Component):
     """Defines an item in the actions drop-up on the snippet creation/edit view"""
-    order = 100  # default order index if one is not specified on init
-    template = 'wagtailsnippets/snippets/action_menu/menu_item.html'
 
-    label = ''
+    order = 100  # default order index if one is not specified on init
+    template_name = "wagtailsnippets/snippets/action_menu/menu_item.html"
+
+    label = ""
     name = None
-    classname = ''
-    icon_name = ''
+    classname = ""
+    icon_name = ""
 
     def __init__(self, order=None):
         if order is not None:
             self.order = order
 
-    def is_shown(self, request, context):
+    def is_shown(self, context):
         """
         Whether this action should be shown on this request; permission checks etc should go here.
 
@@ -40,52 +41,54 @@ class ActionMenuItem(metaclass=MediaDefiningClass):
         """
         return True
 
-    def get_context(self, request, parent_context):
+    def get_context_data(self, parent_context):
         """Defines context for the template, overridable to use more data"""
         context = parent_context.copy()
-        context.update({
-            'label': self.label,
-            'url': self.get_url(request, context),
-            'name': self.name,
-            'classname': self.classname,
-            'icon_name': self.icon_name,
-        })
+        url = self.get_url(parent_context)
+
+        context.update(
+            {
+                "label": self.label,
+                "url": url,
+                "name": self.name,
+                "classname": self.classname,
+                "icon_name": self.icon_name,
+                "request": parent_context["request"],
+                "is_revision": parent_context["view"] == "revisions_revert",
+            }
+        )
         return context
 
-    def get_url(self, request, context):
+    def get_url(self, parent_context):
         return None
-
-    def render_html(self, request, parent_context):
-        context = self.get_context(request, parent_context)
-        return render_to_string(self.template, context, request=request)
 
 
 class DeleteMenuItem(ActionMenuItem):
-    name = 'action-delete'
+    name = "action-delete"
     label = _("Delete")
-    icon_name = 'bin'
-    classname = 'action-secondary'
+    icon_name = "bin"
+    classname = "action-secondary"
 
-    def is_shown(self, request, context):
-        delete_permission = get_permission_name('delete', context['model'])
+    def is_shown(self, context):
+        delete_permission = get_permission_name("delete", context["model"])
 
-        return (
-            context['view'] == 'edit'
-            and request.user.has_perm(delete_permission)
+        return context["view"] == "edit" and context["request"].user.has_perm(
+            delete_permission
         )
 
-    def get_url(self, request, context):
-        return reverse('wagtailsnippets:delete', args=[
-            context['model']._meta.app_label,
-            context['model']._meta.model_name,
-            quote(context['instance'].pk)
-        ])
+    def get_url(self, context):
+        app_label = context["model"]._meta.app_label
+        model_name = context["model"]._meta.model_name
+        return reverse(
+            f"wagtailsnippets_{app_label}_{model_name}:delete",
+            args=[quote(context["instance"].pk)],
+        )
 
 
 class SaveMenuItem(ActionMenuItem):
-    name = 'action-save'
+    name = "action-save"
     label = _("Save")
-    template = 'wagtailsnippets/snippets/action_menu/save.html'
+    template_name = "wagtailsnippets/snippets/action_menu/save.html"
 
 
 @lru_cache(maxsize=None)
@@ -99,7 +102,7 @@ def get_base_snippet_action_menu_items(model):
         DeleteMenuItem(order=10),
     ]
 
-    for hook in hooks.get_hooks('register_snippet_action_menu_item'):
+    for hook in hooks.get_hooks("register_snippet_action_menu_item"):
         action_menu_item = hook(model)
         if action_menu_item:
             menu_items.append(action_menu_item)
@@ -108,25 +111,25 @@ def get_base_snippet_action_menu_items(model):
 
 
 class SnippetActionMenu:
-    template = 'wagtailsnippets/snippets/action_menu/menu.html'
+    template = "wagtailsnippets/snippets/action_menu/menu.html"
 
     def __init__(self, request, **kwargs):
         self.request = request
         self.context = kwargs
-        self.menu_items = []
+        self.context["request"] = request
 
-        if 'instance' in self.context:
-            self.context['model'] = self.context['instance'].__class__
+        if "instance" in self.context:
+            self.context["model"] = self.context["instance"].__class__
 
-        self.menu_items.extend([
+        self.menu_items = [
             menu_item
-            for menu_item in get_base_snippet_action_menu_items(self.context['model'])
-            if menu_item.is_shown(self.request, self.context)
-        ])
+            for menu_item in get_base_snippet_action_menu_items(self.context["model"])
+            if menu_item.is_shown(self.context)
+        ]
 
         self.menu_items.sort(key=lambda item: item.order)
 
-        for hook in hooks.get_hooks('construct_snippet_action_menu'):
+        for hook in hooks.get_hooks("construct_snippet_action_menu"):
             hook(self.menu_items, self.request, self.context)
 
         try:
@@ -135,14 +138,20 @@ class SnippetActionMenu:
             self.default_item = None
 
     def render_html(self):
-        return render_to_string(self.template, {
-            'default_menu_item': self.default_item.render_html(self.request, self.context),
-            'show_menu': bool(self.menu_items),
-            'rendered_menu_items': [
-                menu_item.render_html(self.request, self.context)
-                for menu_item in self.menu_items
-            ],
-        }, request=self.request)
+        rendered_menu_items = [
+            menu_item.render_html(self.context) for menu_item in self.menu_items
+        ]
+        rendered_default_item = self.default_item.render_html(self.context)
+
+        return render_to_string(
+            self.template,
+            {
+                "default_menu_item": rendered_default_item,
+                "show_menu": bool(self.menu_items),
+                "rendered_menu_items": rendered_menu_items,
+            },
+            request=self.request,
+        )
 
     @cached_property
     def media(self):

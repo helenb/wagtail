@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-11-17 15:41+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-21 15:50+0000\n"
+"Last-Translator: hanfeng <appweb.cn@gmail.com>, 2014,2017\n"
 "Language-Team: Chinese (http://www.transifex.com/torchbox/wagtail/language/"
 "zh/)\n"
 "MIME-Version: 1.0\n"
@@ -36,23 +36,35 @@ msgstr "删除"
 msgid "You do not have permission to access the admin"
 msgstr "您没有进入后台的权限"
 
-msgid "Content"
-msgstr "内容"
+msgid "None"
+msgstr "没有"
 
-msgid "Settings"
-msgstr "设置"
+msgid "First Name"
+msgstr "名"
 
-msgid "Date"
-msgstr "日期"
+msgid "Last Name"
+msgstr "姓"
 
-msgid "Title"
-msgstr "标题"
+msgid "Email"
+msgstr "电子邮件"
 
 msgid "Enter password"
 msgstr "请输入密码"
 
 msgid "Enter your email address to reset your password"
 msgstr "输入您的电子邮箱来重置您的密码"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Parent"
+msgstr "上一级"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Edit"
+msgstr "编辑"
 
 msgid "New title"
 msgstr "新标题"
@@ -66,14 +78,20 @@ msgstr "搜索"
 msgid "Search term"
 msgstr "搜索词"
 
-msgid "Edit"
-msgstr "编辑"
+msgid "Content"
+msgstr "内容"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Preview"
+msgstr "预览"
 
 msgid "Account"
 msgstr "账号"
-
-msgid "Update"
-msgstr "更新"
 
 msgid "Change password"
 msgstr "修改密码"
@@ -81,9 +99,6 @@ msgstr "修改密码"
 msgid ""
 "Your password can't be changed here. Please contact a site administrator."
 msgstr "您的密码不能在此更改。请联系网站管理员。"
-
-msgid "Notification preferences"
-msgstr "通知偏好"
 
 msgid "Reset password"
 msgstr "重置密码"
@@ -105,21 +120,6 @@ msgstr "密码已重置"
 
 msgid "Reset your password"
 msgstr "重置您的密码"
-
-msgid "Dashboard"
-msgstr "仪表板"
-
-msgid "Menu"
-msgstr "菜单"
-
-msgid "Move up"
-msgstr "向上移动"
-
-msgid "Move down"
-msgstr "向下移动"
-
-msgid "Explorer"
-msgstr "浏览"
 
 msgid "Internal link"
 msgstr "内部链接"
@@ -148,8 +148,17 @@ msgstr "添加一个外部链接"
 msgid "Save"
 msgstr "保存"
 
+msgid "Name"
+msgstr "名字"
+
 msgid "Yes, delete"
 msgstr "是的，删除"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "Dashboard"
+msgstr "仪表板"
 
 #, python-format
 msgid "Welcome to the %(site_name)s Wagtail CMS"
@@ -160,6 +169,9 @@ msgid ""
 "created will be displayed."
 msgstr "这是您的仪表盘，会显示对您已创建的内容有帮助的信息"
 
+msgid "Title"
+msgstr "标题"
+
 msgid "Edit this page"
 msgstr "编辑这个页面"
 
@@ -168,9 +180,6 @@ msgstr "草稿"
 
 msgid "Pages awaiting moderation"
 msgstr "这些页面在等待审核"
-
-msgid "Parent"
-msgstr "上一级"
 
 msgid "Type"
 msgstr "类型"
@@ -184,14 +193,11 @@ msgstr "通过"
 msgid "Reject"
 msgstr "拒绝"
 
-msgid "Preview"
-msgstr "预览"
-
 msgid "Your most recent edits"
 msgstr "你最近的编辑"
 
-msgid "Status"
-msgstr "状态"
+msgid "Date"
+msgstr "日期"
 
 msgid "Site summary"
 msgstr "网站摘要"
@@ -201,9 +207,6 @@ msgstr "登录"
 
 msgid "Sign in to Wagtail"
 msgstr "登录Wagtail"
-
-msgid "Forgotten it?"
-msgstr "忘记了？"
 
 #, python-format
 msgid "The page \"%(title)s\" has been approved."
@@ -244,6 +247,9 @@ msgstr "这个页面 \"%(page)s\" 已经提交审核"
 msgid "Page privacy"
 msgstr "页面隐私"
 
+msgid "Saving…"
+msgstr "正在保存"
+
 msgid "Save draft"
 msgstr "保存草稿"
 
@@ -261,6 +267,9 @@ msgstr "选择你希望创建哪个类型的页面。"
 msgid "Pages using %(page_type)s"
 msgstr "%(page_type)s 类的页面"
 
+msgid "Move"
+msgstr "移动"
+
 #, python-format
 msgid "Delete %(title)s"
 msgstr "删除%(title)s"
@@ -271,9 +280,6 @@ msgstr "你确定你要删除此页吗？"
 #, python-format
 msgid "Move %(title)s"
 msgstr "移动 %(title)s"
-
-msgid "Move"
-msgstr "移动"
 
 #, python-format
 msgid "Are you sure you want to move this page into '%(title)s'?"
@@ -308,9 +314,6 @@ msgstr "复制"
 msgid "New %(page_type)s"
 msgstr "新%(page_type)s类"
 
-msgid "New"
-msgstr "新"
-
 #, python-format
 msgid "Exploring %(title)s"
 msgstr "浏览%(title)s"
@@ -324,9 +327,6 @@ msgstr "浏览"
 #, python-format
 msgid "Add a child page to '%(title)s'"
 msgstr "添加子页面至'%(title)s'"
-
-msgid "Add child page"
-msgstr "添加子页面"
 
 msgid "Previous"
 msgstr "向前"
@@ -351,6 +351,12 @@ msgstr "为<span>%(title)s</span>选择一个新的根页面"
 msgid "Enter a search term above"
 msgstr "请在上面输入搜索词"
 
+msgid "Move up"
+msgstr "向上移动"
+
+msgid "Move down"
+msgstr "向下移动"
+
 #, python-format
 msgid "Page %(page_num)s of %(total_pages)s."
 msgstr "第%(page_num)s页 共%(total_pages)s页"
@@ -358,19 +364,36 @@ msgstr "第%(page_num)s页 共%(total_pages)s页"
 msgid "Home"
 msgstr "主页"
 
-msgid "Log out"
-msgstr "登出"
+msgid "New"
+msgstr "新"
 
 #, python-format
 msgid "by %(modified_by)s"
 msgstr "作者%(modified_by)s"
 
-msgid "Your password has been changed successfully!"
-msgstr "您的密码已经更改成功。"
+msgid "More"
+msgstr "更多"
 
+msgid "Log out"
+msgstr "登出"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Editing"
+msgstr "正在编辑"
+
+msgid "View draft"
+msgstr "查看草稿"
+
+msgid "View live"
+msgstr "查看在线版"
+
+#, python-brace-format
 msgid "Page '{0}' created."
 msgstr "第 '{0}' 页已创建。"
 
+#, python-brace-format
 msgid "Page '{0}' deleted."
 msgstr "第 '{0}' 页已删除"
 
@@ -380,26 +403,31 @@ msgstr "这页正在等待审核"
 msgid "The page could not be saved due to validation errors"
 msgstr "这页无法保存，因为页面发生验证错误"
 
+#, python-brace-format
 msgid "The page '{0}' is not currently awaiting moderation."
 msgstr "第 '{0}' 页当前不需要等待审核。"
 
+#, python-brace-format
 msgid "Page '{0}' published."
 msgstr "第 '{0}' 页已发布。"
 
+#, python-brace-format
 msgid "Page '{0}' rejected for publication."
 msgstr "第 '{0}' 页已被拒绝发布。"
 
+#, python-brace-format
 msgid "Page '{0}' moved."
 msgstr "第 '{0}' 页已移动。"
 
+#, python-brace-format
 msgid "Page '{0}' unpublished."
 msgstr "第 '{0}' 页已取消发布"
 
-msgid "Change the password you use to log in."
-msgstr "修改您用于登录的密码。"
+msgid "Server Error"
+msgstr "服务错误"
 
-msgid "Choose which email notifications to receive."
-msgstr "请选择接收邮件提醒的方式"
+msgid "Add child page"
+msgstr "添加子页面"
 
 msgid "Choose an item"
 msgstr "选择一个选项"

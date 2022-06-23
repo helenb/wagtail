@@ -4,22 +4,24 @@
 #
 # Translators:
 # Benedikt Willi <ben.willi@gmail.com>, 2020
-# Benjamin Thurm, 2018
+# fd3e232e7013009a14520c2bc2e16691_e19811b, 2018
 # Ettore Atalan <atalanttore@googlemail.com>, 2017,2020
 # Henrik Kröger <hedwig@riseup.net>, 2016,2018
+# oliverengel <codeangel@posteo.de>, 2021
 # Johannes Spielmann <j@spielmannsolutions.com>, 2014-2015
 # Matthias Martin, 2019
 # Max Pfeiffer <max.pfeiffer@alp-phone.ch>, 2015
 # Moritz Pfeiffer <moritz@alp-phone.ch>, 2016-2018
 # Patrick Hebner <hebner.tec@gmail.com>, 2020
+# th3hamm0r <stefan@hammerworxx.com>, 2022
 # Tammo van Lessen <tvanlessen@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-10-05 18:06+0000\n"
-"Last-Translator: Patrick Hebner <hebner.tec@gmail.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-09-11 15:42+0000\n"
+"Last-Translator: th3hamm0r <stefan@hammerworxx.com>, 2022\n"
 "Language-Team: German (http://www.transifex.com/torchbox/wagtail/language/"
 "de/)\n"
 "MIME-Version: 1.0\n"
@@ -30,10 +32,6 @@ msgstr ""
 
 msgid "Wagtail forms"
 msgstr "Wagtail Formulare"
-
-#, python-format
-msgid "%s submissions"
-msgstr "%s Abgaben"
 
 msgid "Date from"
 msgstr "Datum von"
@@ -98,6 +96,11 @@ msgstr "Formulareinreichungen"
 msgid "name"
 msgstr "Name"
 
+msgid "Safe name of the form field, the label converted to ascii_snake_case"
+msgstr ""
+"Speichere den Name des Feldes der Eingabenmaske, die Bezeichnung wurde in "
+"ascii_snake_case konvertiert"
+
 msgid "label"
 msgstr "Beschriftung"
 
@@ -114,18 +117,20 @@ msgid "choices"
 msgstr "Auswahl"
 
 msgid ""
-"Comma separated list of choices. Only applicable in checkboxes, radio and "
-"dropdown."
+"Comma or new line separated list of choices. Only applicable in checkboxes, "
+"radio and dropdown."
 msgstr ""
-"Liste der Wahlmöglichkeiten, durch Kommas getrennt. Gilt nur für Checkboxen, "
-"Dropdowns und Radiobuttons."
+"Liste der Wahlmöglichkeiten, durch Kommas oder Zeilenumbrüche getrennt. Gilt "
+"nur für Checkboxen, Dropdowns und Radiobuttons."
 
 msgid "default value"
 msgstr "Vorgabewert"
 
-msgid "Default value. Comma separated values supported for checkboxes."
+msgid ""
+"Default value. Comma or new line separated values supported for checkboxes."
 msgstr ""
-"Standardwert. Werte für Checkboxen können durch Kommas getrennt werden."
+"Standardwert. Werte für Checkboxen können durch Kommas oder Zeilenumbrüche "
+"getrennt werden."
 
 msgid "help text"
 msgstr "Hilfetext"
@@ -156,35 +161,23 @@ msgid "subject"
 msgstr "Betreff"
 
 #, python-format
+msgid "%s submissions"
+msgstr "%s Abgaben"
+
+#, python-format
 msgid "Delete form data %(title)s"
 msgstr "Formulardaten löschen %(title)s"
 
 msgid "Delete form data"
 msgstr "Formulardaten löschen"
 
-msgid ""
-"\n"
-"                Are you sure you want to delete this form submission?\n"
-"            "
-msgid_plural ""
-"\n"
-"                Are you sure you want to delete these form submissions?\n"
-"            "
-msgstr[0] ""
-"\n"
-"Sind Sie sicher, dass Sie diese Formular-Eingabe löschen wollen?"
-msgstr[1] ""
-"\n"
-"Sind Sie sicher, dass Sie diese Formular-Eingaben löschen wollen?"
+msgid "Are you sure you want to delete this form submission?"
+msgid_plural "Are you sure you want to delete these form submissions?"
+msgstr[0] "Sind Sie sicher, dass Sie diese Formular-Eingabe löschen wollen?"
+msgstr[1] "Sind Sie sicher, dass Sie diese Formular-Eingaben löschen wollen?"
 
 msgid "Delete"
 msgstr "Löschen"
-
-msgid "Total submissions"
-msgstr "Anzahl Abgaben"
-
-msgid "Latest submission"
-msgstr "Neueste Abgabe"
 
 msgid "Forms"
 msgstr "Formulare"
@@ -221,6 +214,12 @@ msgstr "Ursprung"
 
 msgid "Delete selected submissions"
 msgstr "Ausgewählte Abgaben löschen"
+
+msgid "Total submissions"
+msgstr "Anzahl Abgaben"
+
+msgid "Latest submission"
+msgstr "Neueste Abgabe"
 
 msgid "No form pages have been created."
 msgstr "Es wurden keine Formularseiten angelegt."

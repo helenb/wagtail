@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import EmbedBlock from '../blocks/EmbedBlock';
+import EmbedBlock from './EmbedBlock';
 
 describe('EmbedBlock', () => {
   it('renders', () => {
@@ -21,8 +21,8 @@ describe('EmbedBlock', () => {
             },
             onChange: () => {},
           }}
-        />
-      )
+        />,
+      ),
     ).toMatchSnapshot();
   });
 
@@ -39,8 +39,8 @@ describe('EmbedBlock', () => {
             },
             onChange: () => {},
           }}
-        />
-      )
+        />,
+      ),
     ).toMatchSnapshot();
   });
 });

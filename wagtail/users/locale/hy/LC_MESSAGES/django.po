@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-07-24 16:51+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-19 11:54+0000\n"
+"Last-Translator: Vachagan <vache.grg40@gmail.com>, 2019\n"
 "Language-Team: Armenian (http://www.transifex.com/torchbox/wagtail/language/"
 "hy/)\n"
 "MIME-Version: 1.0\n"
@@ -68,15 +68,6 @@ msgstr "Տվյալ անունով խումբ արդեն գոյություն ո�
 
 msgid "You cannot have multiple permission records for the same page."
 msgstr "Նույն էջում չեք կարող ունենալ բազմակի թույլտվության գրառում."
-
-msgid "Preferred language"
-msgstr "Նախընտրելի լեզու"
-
-msgid "Current time zone"
-msgstr "Ներկայիս ժամային գոտին"
-
-msgid "Upload a profile picture"
-msgstr "Վերբեռնեք պրոֆիլի նկարը"
 
 msgid "submitted notifications"
 msgstr "Ներկայացնել ծանուցումները"

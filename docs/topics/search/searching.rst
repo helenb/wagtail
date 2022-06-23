@@ -23,7 +23,7 @@ Wagtail provides a shortcut for searching pages: the ``.search()`` ``QuerySet`` 
 .. code-block:: python
 
     # Search future EventPages
-    >>> from wagtail.core.models import EventPage
+    >>> from wagtail.models import EventPage
     >>> EventPage.objects.filter(date__gt=timezone.now()).search("Hello world!")
 
 
@@ -39,6 +39,29 @@ All other methods of ``PageQuerySet`` can be used with ``search()``. For example
 .. note::
 
     The ``search()`` method will convert your ``QuerySet`` into an instance of one of Wagtail's ``SearchResults`` classes (depending on backend). This means that you must perform filtering before calling ``search()``.
+
+
+.. note::
+
+    Before the ``autocomplete()`` method was introduced, the search method also did partial matching. This behaviour is will be deprecated and you should
+    either switch to the new ``autocomplete()`` method or pass ``partial_match=False`` into the search method to opt-in to the new behaviour. The
+    partial matching in ``search()`` will be completely removed in a future release.
+
+
+Autocomplete searches
+---------------------
+
+Wagtail provides a separate method which performs partial matching on specific autocomplete fields. This is useful for suggesting pages to the user in real-time as they type their query.
+
+.. code-block:: python
+
+    >>> EventPage.objects.live().autocomplete("Eve")
+    [<EventPage: Event 1>, <EventPage: Event 2>]
+
+
+.. tip::
+
+    This method should only be used for real-time autocomplete and actual search requests should always use the ``search()`` method.
 
 
 .. _wagtailsearch_images_documents_custom_models:
@@ -132,8 +155,8 @@ Search operator
 
 The search operator specifies how search should behave when the user has typed in multiple search terms. There are two possible values:
 
- - "or" - The results must match at least one term (default for Elasticsearch)
- - "and" - The results must match all terms (default for database search)
+- "or" - The results must match at least one term (default for Elasticsearch)
+- "and" - The results must match all terms (default for database search)
 
 Both operators have benefits and drawbacks. The "or" operator will return many more results but will likely contain a lot of results that aren't relevant. The "and" operator only returns results that contain all search terms, but require the user to be more precise with their query.
 
@@ -192,6 +215,28 @@ For example:
     [<Page: World Hello day>]
 
 If you are looking to implement phrase queries using the double-quote syntax, see :ref:`wagtailsearch_query_string_parsing`.
+
+.. _fuzzy_matching:
+
+Fuzzy matching
+^^^^^^^^^^^^^^
+
+.. versionadded:: 4.0
+
+Fuzzy matching will return documents which contain terms similar to the search term, as measured by a `Levenshtein edit distance <https://en.wikipedia.org/wiki/Levenshtein_distance>`.
+
+A maximum of one edit (transposition, insertion, or removal of a character) is permitted for three to five letter terms, two edits for longer terms, and shorter terms must match exactly.
+
+For example:
+
+.. code-block:: python
+
+    >>> from wagtail.search.query import Fuzzy
+
+    >>> Page.objects.search(Fuzzy("Hallo"))
+    [<Page: Hello World>]
+
+Fuzzy matching is supported by the Elasticsearch search backend only.
 
 
 .. _wagtailsearch_complex_queries:
@@ -340,7 +385,7 @@ For example:
     ...    print(event.title, event._score)
     ...
     ("Easter", 2.5),
-    ("Haloween", 1.7),
+    ("Halloween", 1.7),
     ("Christmas", 1.5),
 
 Note that the score itself is arbitrary and it is only useful for comparison
@@ -359,7 +404,7 @@ Here's an example Django view that could be used to add a "search" page to your 
 
     from django.shortcuts import render
 
-    from wagtail.core.models import Page
+    from wagtail.models import Page
     from wagtail.search.models import Query
 
 
@@ -383,7 +428,7 @@ Here's an example Django view that could be used to add a "search" page to your 
 
 And here's a template to go with it:
 
-.. code-block:: html
+.. code-block:: html+django
 
     {% extends "base.html" %}
     {% load wagtailcore_tags %}

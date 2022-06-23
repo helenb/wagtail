@@ -12,8 +12,8 @@ function createPageChooser(id, openAtParentId, options) {
   createPageChooser. State is either null (= no page chosen) or a dict of id, parentId,
   adminTitle (the admin display title) and editUrl.
   The result returned from the page chooser modal (which is ultimately built from the data
-  attributes in wagtailadmin/pages/listing/_page_title_choose.html) is a superset of this, and
-  can therefore be passed directly to chooser.setState.
+  attributes in wagtailadmin/chooser/tables/page_title_cell.html) is a superset of this, and can
+  therefore be passed directly to chooser.setState.
   */
   let state = null;
   if (input.val()) {
@@ -21,7 +21,7 @@ function createPageChooser(id, openAtParentId, options) {
       id: input.val(),
       parentId: openAtParentId,
       adminTitle: pageTitle.text(),
-      editUrl: editLink.attr('href')
+      editUrl: editLink.attr('href'),
     };
   }
 
@@ -42,6 +42,17 @@ function createPageChooser(id, openAtParentId, options) {
 
       state = newState;
     },
+    getTextLabel: (opts) => {
+      if (!state) return null;
+      const result = state.adminTitle;
+      if (opts && opts.maxLength && result.length > opts.maxLength) {
+        return result.substring(0, opts.maxLength - 1) + '…';
+      }
+      return result;
+    },
+    focus: () => {
+      $('.action-choose', chooserElement).focus();
+    },
 
     openChooserModal: () => {
       let url = chooserBaseUrl;
@@ -49,13 +60,19 @@ function createPageChooser(id, openAtParentId, options) {
         url += state.parentId + '/';
       }
       const urlParams = { page_type: options.model_names.join(',') };
+      if (options.target_pages) {
+        urlParams.target_pages = options.target_pages;
+      }
+      if (options.match_subclass) {
+        urlParams.match_subclass = options.match_subclass;
+      }
       if (options.can_choose_root) {
         urlParams.can_choose_root = 'true';
       }
       if (options.user_perms) {
         urlParams.user_perms = options.user_perms;
       }
-      // eslint-disable-next-line no-undef, new-cap
+      // eslint-disable-next-line no-undef
       ModalWorkflow({
         url: url,
         urlParams: urlParams,
@@ -64,8 +81,8 @@ function createPageChooser(id, openAtParentId, options) {
         responses: {
           pageChosen: (result) => {
             chooser.setState(result);
-          }
-        }
+          },
+        },
       });
     },
 

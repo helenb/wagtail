@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Andrej, 2022
+# andrej55 <andrej.marsetic@gmail.com>, 2022
 # Mitja Pagon <mitja.pagon@inueni.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-10-23 11:37+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-19 19:01+0000\n"
+"Last-Translator: andrej55 <andrej.marsetic@gmail.com>, 2022\n"
 "Language-Team: Slovenian (http://www.transifex.com/torchbox/wagtail/language/"
 "sl/)\n"
 "MIME-Version: 1.0\n"
@@ -26,6 +28,9 @@ msgstr "Izbriši"
 msgid "Save"
 msgstr "Shrani"
 
+msgid "Wagtail snippets"
+msgstr "Wagtail delci"
+
 msgid "Choose"
 msgstr "Izberite"
 
@@ -36,12 +41,31 @@ msgstr "Iskanje"
 msgid "Sorry, no snippets match \"<em>%(query_string)s</em>\""
 msgstr "Žal ni delca, ki bi ustrezal nizu \"<em>%(query_string)s</em>\""
 
+msgid "Last updated"
+msgstr "Zadnje posodobljeno"
+
+msgid "History"
+msgstr "Zgodovina"
+
+msgid "Saving…"
+msgstr "Shranjevanje ..."
+
+#, python-format
+msgid "Delete %(snippet_type_name)s"
+msgstr "Izbriši %(snippet_type_name)s"
+
+msgid "Delete "
+msgstr "Izbriši"
+
 #, python-format
 msgid "Are you sure you want to delete this %(snippet_type_name)s?"
 msgstr "Ali ste prepričani, da želite izbrisati %(snippet_type_name)s?"
 
 msgid "Yes, delete"
 msgstr "Da, izbriši"
+
+msgid "No, don't delete"
+msgstr "Ne, ne izbriši"
 
 #, python-format
 msgid "New  %(snippet_type_name)s"
@@ -50,6 +74,9 @@ msgstr "Nov  %(snippet_type_name)s"
 msgid "New"
 msgstr "Nov"
 
+msgid "Actions"
+msgstr "Dejanja"
+
 #, python-format
 msgid "Editing %(snippet_type_name)s - %(instance)s"
 msgstr "Urejanje %(snippet_type_name)s - %(instance)s"
@@ -57,11 +84,18 @@ msgstr "Urejanje %(snippet_type_name)s - %(instance)s"
 msgid "Editing"
 msgstr "Urejanje"
 
+msgid "Usage"
+msgstr "Uporaba"
+
 msgid "Snippets"
 msgstr "Delci"
 
 msgid "Title"
 msgstr "Naziv"
+
+#, python-format
+msgid "Select %(snippet)s"
+msgstr "Izberite %(snippet)s"
 
 #, python-format
 msgid ""
@@ -106,14 +140,31 @@ msgstr "Uredi stran"
 msgid "Search %(snippet_type_name)s"
 msgstr "Iskanje po %(snippet_type_name)s"
 
-msgid "Edit"
-msgstr "Uredi"
-
 msgid "The snippet could not be created due to errors."
 msgstr "Delca, zaradi napak, ni bilo možno ustvariti."
 
+msgid "Edit"
+msgstr "Uredi"
+
 msgid "The snippet could not be saved due to errors."
 msgstr "Delca, zaradi napak, ni bilo možno shraniti."
+
+msgid "Snippet history"
+msgstr "Zgodovina odrezka"
+
+msgid "Action"
+msgstr "Dejanje"
+
+msgid "Date"
+msgstr "Datum"
+
+#, python-format
+msgid "Edit '%(title)s'"
+msgstr "Uredi '%(title)s'"
+
+#, python-format
+msgid "Delete '%(title)s'"
+msgstr "Izbriši '%(title)s'"
 
 #, python-format
 msgid "Choose %s"

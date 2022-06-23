@@ -7,14 +7,14 @@
 # First Last <abc+github@mynook.info>, 2019
 # Fred Zeng <979738295@qq.com>, 2016
 # Vincent Zhao <zhaopu2008@gmail.com>, 2017
-# 汇民 王 <whuim@qq.com>, 2017,2020
+# 汇民 王 <whuim@qq.com>, 2017,2020-2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-04-21 15:58+0000\n"
-"Last-Translator: 汇民 王 <whuim@qq.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2016-05-11 20:22+0000\n"
+"Last-Translator: 汇民 王 <whuim@qq.com>, 2017,2020-2021\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/torchbox/wagtail/"
 "language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -120,9 +120,15 @@ msgstr "否，不删除"
 msgid "Home"
 msgstr "主页"
 
+msgid "Last updated"
+msgstr "最近更新"
+
+msgid "History"
+msgstr "历史"
+
 #, python-format
-msgid " By %(filter_title)s "
-msgstr "按  %(filter_title)s "
+msgid "%(result_count)s out of %(all_count)s"
+msgstr "%(result_count)s / %(all_count)s"
 
 #, python-format
 msgid "Sorry, there are no %(name)s matching your search parameters."
@@ -153,18 +159,6 @@ msgstr "还没有创建%(name)s。这些当中必须先创建一个才能增加�
 #, python-format
 msgid "No %(name)s have been created yet."
 msgstr "还没有创建%(name)s。"
-
-#, python-format
-msgid ""
-"\n"
-"                                                Why not <a href=\"%(url)s"
-"\">add one</a>?\n"
-"                                            "
-msgstr ""
-"\n"
-"                                                为何不<a href=\"%(url)s\">添"
-"加一个</a>？\n"
-"                                            "
 
 msgid "Pagination"
 msgstr "分页"
@@ -234,3 +228,9 @@ msgstr "正在检查"
 #, python-format
 msgid "Inspecting %s"
 msgstr "正在检查%s"
+
+msgid "Action"
+msgstr "行为"
+
+msgid "Date"
+msgstr "日期"

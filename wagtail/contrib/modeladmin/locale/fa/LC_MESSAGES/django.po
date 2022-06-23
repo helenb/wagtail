@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-04-21 13:54+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2016-05-11 20:22+0000\n"
+"Last-Translator: pyzenberg <pyzenberg@gmail.com>, 2017\n"
 "Language-Team: Persian (http://www.transifex.com/torchbox/wagtail/language/"
 "fa/)\n"
 "MIME-Version: 1.0\n"
@@ -113,10 +113,6 @@ msgid "Home"
 msgstr "خانه"
 
 #, python-format
-msgid " By %(filter_title)s "
-msgstr "توسط %(filter_title)s"
-
-#, python-format
 msgid "Sorry, there are no %(name)s matching your search parameters."
 msgstr "متاسفانه هیچ %(name)s منطبق با پارامترهای جستجو شما پیدا نشد."
 
@@ -126,6 +122,12 @@ msgstr "جستجو برای"
 #, python-format
 msgid "Search %(name)s"
 msgstr "جستجوی %(name)s"
+
+msgid "Download XLSX"
+msgstr "دانلود XLSX"
+
+msgid "Download CSV"
+msgstr "دانلود CSV"
 
 msgid "Filter"
 msgstr "فیلتر"
@@ -142,15 +144,8 @@ msgstr ""
 msgid "No %(name)s have been created yet."
 msgstr "هیچ %(name)s هنوز ایجاد نشده"
 
-#, python-format
-msgid ""
-"\n"
-"                                                Why not <a href=\"%(url)s"
-"\">add one</a>?\n"
-"                                            "
-msgstr ""
-"\n"
-"چرا یکی <a href=\"%(url)s\">اضافه</a> نمی‌کنید؟"
+msgid "Pagination"
+msgstr "صفحه‌بندی"
 
 #, python-format
 msgid "Page %(current_page)s of %(num_pages)s."
@@ -206,3 +201,6 @@ msgstr "بازرسی"
 #, python-format
 msgid "Inspecting %s"
 msgstr "بازرسی %s"
+
+msgid "Date"
+msgstr "تاریخ"

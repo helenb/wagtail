@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-11-17 15:41+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-21 15:50+0000\n"
+"Last-Translator: Lyuboslav  Petrov <petrov.lyuboslav@gmail.com>, 2014\n"
 "Language-Team: Bulgarian (http://www.transifex.com/torchbox/wagtail/language/"
 "bg/)\n"
 "MIME-Version: 1.0\n"
@@ -32,14 +32,29 @@ msgstr "Отмени публикуването"
 msgid "Delete"
 msgstr "Изтрий"
 
-msgid "Date"
-msgstr "Дата"
+msgid "None"
+msgstr "Нищо"
 
-msgid "Title"
-msgstr "Заглавие"
+msgid "First Name"
+msgstr "Първо Име"
+
+msgid "Last Name"
+msgstr "Последно Име"
+
+msgid "Email"
+msgstr "Имейл"
 
 msgid "Enter your email address to reset your password"
 msgstr "Въведете вашият имейл адрес за да си възстановите паролата"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Parent"
+msgstr "Родител"
+
+msgid "Edit"
+msgstr "Редакция"
 
 msgid "This slug is already in use"
 msgstr "Този слъг е вече в употреба"
@@ -50,8 +65,11 @@ msgstr "Търсене"
 msgid "Search term"
 msgstr "Фраза за търсене"
 
-msgid "Edit"
-msgstr "Редакция"
+msgid "Status"
+msgstr "Статус"
+
+msgid "Preview"
+msgstr "Преглед"
 
 msgid "Account"
 msgstr "Профил"
@@ -86,21 +104,6 @@ msgstr "Паролата е възстановена"
 msgid "Reset your password"
 msgstr "Възстановете паролата си"
 
-msgid "Dashboard"
-msgstr "Работно Табло"
-
-msgid "Menu"
-msgstr "Меню"
-
-msgid "Move up"
-msgstr "Нагоре"
-
-msgid "Move down"
-msgstr "Надолу"
-
-msgid "Explorer"
-msgstr "Файлов мениджър"
-
 msgid "Internal link"
 msgstr "Вътрешен линк"
 
@@ -109,6 +112,9 @@ msgstr "Външен линк"
 
 msgid "Email link"
 msgstr "Имейл линк"
+
+msgid "Choose"
+msgstr "Избери"
 
 msgid "Choose a page"
 msgstr "Изберете страница"
@@ -122,6 +128,18 @@ msgstr "Добави линк"
 msgid "Add an external link"
 msgstr "Добави външен линк"
 
+msgid "Save"
+msgstr "Запази"
+
+msgid "Name"
+msgstr "Име"
+
+msgid "Yes, delete"
+msgstr "Да, изтрий го"
+
+msgid "Dashboard"
+msgstr "Работно Табло"
+
 #, python-format
 msgid "Welcome to the %(site_name)s Wagtail CMS"
 msgstr "Добре дошъл в %(site_name)s Wagtail CMS"
@@ -133,14 +151,14 @@ msgstr ""
 "Това е вашето работно табло, където ще бъде показана полезна информация за "
 "контент, който сте създали."
 
+msgid "Title"
+msgstr "Заглавие"
+
 msgid "Edit this page"
 msgstr "Редактирайте тази страница"
 
 msgid "Pages awaiting moderation"
 msgstr "Страници очакващи модерация"
-
-msgid "Parent"
-msgstr "Родител"
 
 msgid "Type"
 msgstr "Вид"
@@ -151,14 +169,11 @@ msgstr "Одобрете"
 msgid "Reject"
 msgstr "Отхвърлете"
 
-msgid "Preview"
-msgstr "Преглед"
-
 msgid "Your most recent edits"
 msgstr "Вашите последни редакции"
 
-msgid "Status"
-msgstr "Статус"
+msgid "Date"
+msgstr "Дата"
 
 msgid "Site summary"
 msgstr "Обобщение на Страницата"
@@ -168,9 +183,6 @@ msgstr "Влез"
 
 msgid "Sign in to Wagtail"
 msgstr "Влезте в Wagtail"
-
-msgid "Forgotten it?"
-msgstr "Забравихте ли?"
 
 #, python-format
 msgid "The page \"%(title)s\" has been approved."
@@ -218,6 +230,9 @@ msgstr "Изберете какъв тип страница искате да с
 msgid "Pages using %(page_type)s"
 msgstr "Страници използващи %(page_type)s"
 
+msgid "Move"
+msgstr "Премести"
+
 #, python-format
 msgid "Delete %(title)s"
 msgstr "Изтрийте %(title)s"
@@ -226,30 +241,8 @@ msgid "Are you sure you want to delete this page?"
 msgstr "Сигурен ли сте, че искате да изтриете страницата?"
 
 #, python-format
-msgid ""
-"\n"
-"                    This will also delete one more subpage.\n"
-"                "
-msgid_plural ""
-"\n"
-"                    This will also delete %(descendant_count)s more "
-"subpages.\n"
-"                "
-msgstr[0] ""
-"\n"
-"                    Това ще изтрие още една подстраница.\n"
-"                "
-msgstr[1] ""
-"\n"
-"                    Това ще изтрие още %(descendant_count)s подстраници.\n"
-"                "
-
-#, python-format
 msgid "Move %(title)s"
 msgstr "Промести %(title)s"
-
-msgid "Move"
-msgstr "Премести"
 
 #, python-format
 msgid "Are you sure you want to move this page into '%(title)s'?"
@@ -283,9 +276,6 @@ msgstr "Страници използващи"
 msgid "New %(page_type)s"
 msgstr "Нова %(page_type)s"
 
-msgid "New"
-msgstr "Ново"
-
 #, python-format
 msgid "Exploring %(title)s"
 msgstr "Преглед на %(title)s"
@@ -299,9 +289,6 @@ msgstr "Мениджър"
 #, python-format
 msgid "Add a child page to '%(title)s'"
 msgstr "Добавете дъщерна страница към '%(title)s'"
-
-msgid "Add child page"
-msgstr "Добави дъщерна страница"
 
 msgid "Previous"
 msgstr "Предишно"
@@ -326,6 +313,12 @@ msgstr "Изберете нова страница родител за <span>%(t
 msgid "Enter a search term above"
 msgstr "Добавете дума за търсене по-горе"
 
+msgid "Move up"
+msgstr "Нагоре"
+
+msgid "Move down"
+msgstr "Надолу"
+
 #, python-format
 msgid "Page %(page_num)s of %(total_pages)s."
 msgstr "Страница %(page_num)s от %(total_pages)s."
@@ -333,19 +326,36 @@ msgstr "Страница %(page_num)s от %(total_pages)s."
 msgid "Home"
 msgstr "Начало"
 
-msgid "Log out"
-msgstr "Излез"
+msgid "New"
+msgstr "Ново"
 
 #, python-format
 msgid "by %(modified_by)s"
 msgstr "по %(modified_by)s"
 
-msgid "Your password has been changed successfully!"
-msgstr "Паролата ви бе променена успешно!"
+msgid "More"
+msgstr "Повече"
 
+msgid "Log out"
+msgstr "Излез"
+
+msgid "Password"
+msgstr "Парола"
+
+msgid "Editing"
+msgstr "Редактиране"
+
+msgid "View draft"
+msgstr "Преглед на Чернова"
+
+msgid "View live"
+msgstr "Преглед на живо"
+
+#, python-brace-format
 msgid "Page '{0}' created."
 msgstr "Страница '{0}' е създадена."
 
+#, python-brace-format
 msgid "Page '{0}' deleted."
 msgstr "Страница '{0}' е изтрита."
 
@@ -355,23 +365,28 @@ msgstr "Тази страница очаква да бъде модериран�
 msgid "The page could not be saved due to validation errors"
 msgstr "Тази страница не можеше да бъде запазена поради валидационни грешки"
 
+#, python-brace-format
 msgid "The page '{0}' is not currently awaiting moderation."
 msgstr "Страница '{0}' не очаква да бъде модерирана."
 
+#, python-brace-format
 msgid "Page '{0}' published."
 msgstr "Страница '{0}' е публикувана."
 
+#, python-brace-format
 msgid "Page '{0}' rejected for publication."
 msgstr "Страница '{0}' отхвърлена от публикуване."
 
+#, python-brace-format
 msgid "Page '{0}' moved."
 msgstr "Страница '{0}' преместена."
 
+#, python-brace-format
 msgid "Page '{0}' unpublished."
 msgstr "Страница '{0}' отменена от публикуване."
 
-msgid "Change the password you use to log in."
-msgstr "Сменете паролата, която ползвате за да влезете."
+msgid "Add child page"
+msgstr "Добави дъщерна страница"
 
 msgid "Choose an item"
 msgstr "Изберете обект"

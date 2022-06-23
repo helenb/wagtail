@@ -2,6 +2,8 @@
 Wagtail 2.6.1 release notes
 ===========================
 
+*August 5, 2019*
+
 .. contents::
     :local:
     :depth: 1
@@ -13,4 +15,4 @@ What's new
 Bug fixes
 ~~~~~~~~~
 
- * Prevent JavaScript errors caused by unescaped quote characters in translation strings (Matt Westcott)
+* Prevent JavaScript errors caused by unescaped quote characters in translation strings (Matt Westcott)

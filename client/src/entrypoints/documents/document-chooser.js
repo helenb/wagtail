@@ -12,7 +12,7 @@ function createDocumentChooser(id) {
   createDocumentChooser. State is either null (= no document chosen) or a dict of id, title and
   edit_link.
 
-  The result returned from the document chooser modal (see get_document_result_data in
+  The result returned from the document chooser modal (see get_document_chosen_response in
   wagtail.documents.views.chooser) is a superset of this, and can therefore be passed directly to
   chooser.setState.
   */
@@ -42,8 +42,19 @@ function createDocumentChooser(id) {
 
       state = newState;
     },
+    getTextLabel: (opts) => {
+      if (!state) return null;
+      const result = state.title;
+      if (opts && opts.maxLength && result.length > opts.maxLength) {
+        return result.substring(0, opts.maxLength - 1) + '…';
+      }
+      return result;
+    },
+    focus: () => {
+      $('.action-choose', chooserElement).focus();
+    },
     openChooserModal: () => {
-      // eslint-disable-next-line no-undef, new-cap
+      // eslint-disable-next-line no-undef
       ModalWorkflow({
         url: chooserBaseUrl,
         // eslint-disable-next-line no-undef
@@ -51,8 +62,8 @@ function createDocumentChooser(id) {
         responses: {
           documentChosen: (result) => {
             chooser.setState(result);
-          }
-        }
+          },
+        },
       });
     },
 

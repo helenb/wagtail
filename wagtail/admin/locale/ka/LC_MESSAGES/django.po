@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-11-17 15:41+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-21 15:50+0000\n"
+"Last-Translator: André Bouatchidzé <a@anbz.net>, 2015\n"
 "Language-Team: Georgian (http://www.transifex.com/torchbox/wagtail/language/"
 "ka/)\n"
 "MIME-Version: 1.0\n"
@@ -25,14 +25,14 @@ msgstr "გამოქვეყნება"
 msgid "Delete"
 msgstr "წაშლა"
 
-msgid "Content"
-msgstr "შიგთავსი"
+msgid "First Name"
+msgstr "სახელი"
 
-msgid "Date"
-msgstr "თარიღი"
+msgid "Last Name"
+msgstr "გვარი"
 
-msgid "Title"
-msgstr "სათაური"
+msgid "Email"
+msgstr "ელფოსტა"
 
 msgid "Enter password"
 msgstr "შეიყვანეთ პაროლი"
@@ -40,6 +40,12 @@ msgstr "შეიყვანეთ პაროლი"
 #, python-format
 msgid "Enter your %s"
 msgstr "შეიყვანეთ თქვენი %s"
+
+msgid "Add"
+msgstr "დამატება"
+
+msgid "Edit"
+msgstr "რედაქტირება"
 
 msgid "New title"
 msgstr "ახალი სათაური"
@@ -49,6 +55,12 @@ msgstr "ძიება"
 
 msgid "Search term"
 msgstr "ძიების ტერმინი"
+
+msgid "Content"
+msgstr "შიგთავსი"
+
+msgid "Status"
+msgstr "სტატუსი"
 
 msgid "Account"
 msgstr "ანგარიში"
@@ -62,14 +74,14 @@ msgstr "შესვლა"
 msgid "Check your email"
 msgstr "შეამოწმეთ თქვენი ელფოსტა"
 
-msgid "Menu"
-msgstr "მენიუ"
-
 msgid "Internal link"
 msgstr "შიდა ბმული"
 
 msgid "Save"
 msgstr "შენახვა"
+
+msgid "Title"
+msgstr "სათაური"
 
 msgid "Edit this page"
 msgstr "ამ გვერდის რედაქტირება"
@@ -77,8 +89,8 @@ msgstr "ამ გვერდის რედაქტირება"
 msgid "Type"
 msgstr "ტიპი"
 
-msgid "Status"
-msgstr "სტატუსი"
+msgid "Date"
+msgstr "თარიღი"
 
 msgid "You can view the page here:"
 msgstr "გვერდის ნახვა შეგიძლიათ აქ:"
@@ -89,8 +101,8 @@ msgstr "გვერდის რესქტირება შეგიძლ�
 msgid "Copy"
 msgstr "კოპირება"
 
-msgid "New"
-msgstr "ახალი"
+msgid "User"
+msgstr "მომხმარებელი"
 
 msgid "Previous"
 msgstr "წინა"
@@ -98,8 +110,17 @@ msgstr "წინა"
 msgid "Next"
 msgstr "შემდეგი"
 
+msgid "Page"
+msgstr "გვერდი"
+
+msgid "New"
+msgstr "ახალი"
+
 msgid "Log out"
 msgstr "გამოსვლა"
+
+msgid "Password"
+msgstr "პაროლი"
 
 msgid "Choose another page"
 msgstr "სხვა გვერდის არჩევა"

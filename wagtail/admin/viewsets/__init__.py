@@ -1,6 +1,6 @@
 from django.urls import include, re_path
 
-from wagtail.core import hooks
+from wagtail import hooks
 
 
 class ViewSetRegistry:
@@ -8,13 +8,18 @@ class ViewSetRegistry:
         self.viewsets = []
 
     def populate(self):
-        for fn in hooks.get_hooks('register_admin_viewset'):
+        for fn in hooks.get_hooks("register_admin_viewset"):
             viewset = fn()
-            self.register(viewset)
+            if isinstance(viewset, (list, tuple)):
+                for vs in viewset:
+                    self.register(vs)
+            else:
+                self.register(viewset)
 
-    def register(self, viewset_cls):
-        self.viewsets.append(viewset_cls)
-        return viewset_cls
+    def register(self, viewset):
+        self.viewsets.append(viewset)
+        viewset.on_register()
+        return viewset
 
     def get_urlpatterns(self):
         urlpatterns = []
@@ -23,10 +28,12 @@ class ViewSetRegistry:
             vs_urlpatterns = viewset.get_urlpatterns()
 
             if vs_urlpatterns:
-                urlpatterns.append(re_path(
-                    r'^{}/'.format(viewset.url_prefix),
-                    include((vs_urlpatterns, viewset.name), namespace=viewset.name)
-                ))
+                urlpatterns.append(
+                    re_path(
+                        r"^{}/".format(viewset.url_prefix),
+                        include((vs_urlpatterns, viewset.name), namespace=viewset.name),
+                    )
+                )
 
         return urlpatterns
 

@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 15:39+0000\n"
-"PO-Revision-Date: 2020-10-28 19:08+0000\n"
-"Last-Translator: Roger Pons <rogerpons@gmail.com>\n"
+"POT-Creation-Date: 2022-04-29 14:46+0100\n"
+"PO-Revision-Date: 2014-02-19 11:54+0000\n"
+"Last-Translator: Roger Pons <rogerpons@gmail.com>, 2017,2020\n"
 "Language-Team: Catalan (http://www.transifex.com/torchbox/wagtail/language/"
 "ca/)\n"
 "MIME-Version: 1.0\n"
@@ -73,15 +73,6 @@ msgstr "Ja existeix un grup amb aquest nom."
 msgid "You cannot have multiple permission records for the same page."
 msgstr "No podeu tenir diversos registres de permisos per la mateixa pàgina."
 
-msgid "Preferred language"
-msgstr "Llengua preferida"
-
-msgid "Current time zone"
-msgstr "Zona horària actual"
-
-msgid "Upload a profile picture"
-msgstr "Carregar una imatge de perfil"
-
 msgid "submitted notifications"
 msgstr "notificacions enviades"
 
@@ -121,30 +112,17 @@ msgstr "perfil d'usuari"
 msgid "user profiles"
 msgstr "imatges de perfil"
 
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Yes, delete"
+msgstr "Sí, suprimir"
+
+msgid "No, don't delete"
+msgstr "No, no esborrar"
+
 msgid "Delete group"
 msgstr "Eliminar grup"
-
-#, python-format
-msgid ""
-"\n"
-"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
-"strong> member.\n"
-"            "
-msgid_plural ""
-"\n"
-"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
-"strong> members.\n"
-"            "
-msgstr[0] ""
-"\n"
-"                El grup '%(group_name)s' té <strong>%(group_user_count)s</"
-"strong> membre.\n"
-"            "
-msgstr[1] ""
-"\n"
-"                El grup '%(group_name)s' té <strong>%(group_user_count)s</"
-"strong> membres.\n"
-"            "
 
 msgid ""
 "Deleting this group will revoke this group's permissions from all member "
@@ -155,9 +133,6 @@ msgstr ""
 
 msgid "Are you sure you want to delete this group?"
 msgstr "Segur que voleu eliminar aquest grup?"
-
-msgid "Yes, delete"
-msgstr "Sí, suprimir"
 
 msgid "Add group"
 msgstr "Afegir grup"
@@ -186,9 +161,6 @@ msgstr "Afegir"
 msgid "Change"
 msgstr "Canviar"
 
-msgid "Delete"
-msgstr "Eliminar"
-
 msgid "Other permissions"
 msgstr "Altres permisos"
 
@@ -200,12 +172,6 @@ msgstr "Pàgina"
 
 msgid "Add a page permission"
 msgstr "Afegir un permís de pàgina"
-
-msgid "groups"
-msgstr "grups"
-
-msgid "Add a group"
-msgstr "Afegir un grup"
 
 #, python-format
 msgid "Sorry, no groups match \"%(query)s\""
@@ -266,24 +232,6 @@ msgid "%(time_period)s ago"
 msgstr "Fa %(time_period)s"
 
 #, python-format
-msgid ""
-"\n"
-"            There is %(counter)s match\n"
-"        "
-msgid_plural ""
-"\n"
-"            There are %(counter)s matches\n"
-"        "
-msgstr[0] ""
-"\n"
-"            S'ha trobat %(counter)s resultat\n"
-"        "
-msgstr[1] ""
-"\n"
-"            S'han trobat %(counter)s resultats\n"
-"        "
-
-#, python-format
 msgid "Sorry, no users match \"<em>%(query_string)s</em>\""
 msgstr "Ho sentim, cap usuari coincideix amb \"<em>%(query_string)s</em>\""
 
@@ -306,24 +254,31 @@ msgstr ""
 msgid "Groups"
 msgstr "Grups"
 
+msgid "Add a group"
+msgstr "Afegir un grup"
+
 msgid "Search groups"
 msgstr "Cercar grups"
 
+#, python-brace-format
 msgid "Group '{0}' created."
 msgstr "S'ha creat el grup '{0}'."
 
+#, python-brace-format
 msgid "Group '{0}' updated."
 msgstr "S'ha actualitzat el grup '{0}'."
 
 msgid "The group could not be saved due to errors."
 msgstr "No s'ha pogut desar el grup a causa d'errors."
 
+#, python-brace-format
 msgid "Group '{0}' deleted."
 msgstr "S'ha eliminat el grup '{0}'."
 
 msgid "Search users"
 msgstr "Cercar usuaris"
 
+#, python-brace-format
 msgid "User '{0}' created."
 msgstr "Usuari '{0}' creat."
 
@@ -333,12 +288,14 @@ msgstr "Editar"
 msgid "The user could not be created due to errors."
 msgstr "No s'ha pogut crear l'usuari degut a errors."
 
+#, python-brace-format
 msgid "User '{0}' updated."
 msgstr "Usuari '{0}' actualitzat."
 
 msgid "The user could not be saved due to errors."
 msgstr "No s'ha pogut desar l'usuari degut a errors."
 
+#, python-brace-format
 msgid "User '{0}' deleted."
 msgstr "S'ha eliminat l'usuari '{0}'."
 
